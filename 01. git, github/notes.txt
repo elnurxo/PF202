@@ -1,3 +1,5 @@
 git init - initializes git repository
 git add - addes changes to stage
 git commit - commits changes
+git status - shows changes in stage (current status)
+git push - pushes changes to origin
