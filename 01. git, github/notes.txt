@@ -1,0 +1,3 @@
+git init - initializes git repository
+git add - addes changes to stage
+git commit - commits changes
