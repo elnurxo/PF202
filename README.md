@@ -1,4 +1,4 @@
-# PF202 :joy:
+# PF202
 **this is ReadMe file for PF202**
 *Front-end development*
 > `let x = hey there;`
