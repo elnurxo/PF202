@@ -1,0 +1,20 @@
+.html - HyperText Markup Language
+HTML is NOT programming Language
+1990s Berners Lee
+alternative - XML
+
+HTML shablon - doc, !, html:5
+
+HTML tags - self close <br>, <a></a>
+HTML attribute - local attribute, global attribute
+HTML content ~
+<!--my comment-->
+comments in HTML - ctrl+/ (comment, uncomment), ctrl+k+c (comment), ctrl+k+u (uncomment)
+
+
+BLOCK LEVEL HTML tags - h1-h6, p, ul, li, ol, div (division)
+
+INLINE LEVEL HTML tags - a, img, span
+
+SEMANTIC HTML TAGS (header, main, footer, article, section ...)
+FORM TAGS & ATTRIBUTES
