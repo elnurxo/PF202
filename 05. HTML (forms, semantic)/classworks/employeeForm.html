@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Add form</title>
+</head>
+
+<body>
+    <h1>Employee Add Form</h1>
+    <form>
+        <label for="fullName">Full Name: </label>
+        <input autocomplete="off" size="20" name="fullName" minlength="5" min="" id="fullName" type="text"
+            placeholder="Enter your name..."> <br>
+        <label for="salary">Salary: </label>
+        <input step="10" name="salary" min="300" max="10000" type="number" placeholder="Enter your salary..."> <br>
+        <label for="position">Position: </label>
+        <select name="position" id="position">
+            <option value="" disabled selected>select your position</option>
+            <option value="hr">HR</option>
+            <option value="it">IT Specialist</option>
+            <option value="marketing">Marketing</option>
+            <option value="dev">Developer</option>
+            <option value="manager">Manager</option>
+        </select>
+        <hr>
+        <label for="male">Male: </label>
+        <input id="male" name="gender" value="male" type="radio">
+        <label for="female">Female: </label>
+        <input id="female" name="gender" value="female" type="radio"> <br>
+        <span>Select your hobbies: </span> <br>
+        <label for="football">Football: </label>
+        <input name="football" id="football" type="checkbox">
+        <label for="music">Music: </label>
+        <input name="music" id="music" type="checkbox">
+        <label for="coding">Coding: </label>
+        <input name="coding" id="coding" type="checkbox">
+        <hr>
+        <label for="message">Message: </label> <br>
+        <textarea cols="50" rows="10" name="message" id="message"></textarea>
+        <hr>
+        <button type="submit">add student</button>
+        <button type="reset">cancel</button>
+    </form>
+</body>
+
+</html>

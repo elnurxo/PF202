@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.box {
+  margin: 20px auto;
+  width: 25%;
+  height: 400px;
+  border: 1px solid black;
+  border-radius: 7px;
+  overflow-y: auto;
+  /* font-size: 2px; */
+}
+.box h1 {
+  text-align: center;
+  padding-top: 14px;
+  text-decoration: underline red;
+  transition: 0.5s;
+  cursor: pointer;
+  font-family: "Poppins";
+  font-style: oblique;
+  font-weight: 300;
+  font-size: 1.5em;
+}
+.box h1:hover {
+  color: darkred;
+  letter-spacing: 0.2em;
+}
+.box p {
+  text-align: justify;
+  padding: 0px 14px;
+  line-height: 1.4em;
+  text-indent: 2rem;
+  font-family: "Poppins";
+  /* font-size: 10rem; */
+  /* word-spacing: 1.5em; */
+}
+.box p::selection {
+  color: white;
+  background-color: red;
+}
+#spider {
+  text-align: center;
+  padding-top: 30px;
+  font-family: "Spider-Man";
+  font-size: 1.2em;
+  font-style: italic;
+}

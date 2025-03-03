@@ -1,0 +1,28 @@
+a {
+  text-decoration: none;
+}
+h1 {
+  color: red;
+  background-color: lightblue;
+  border: 1px solid black;
+  text-align: center;
+  padding: 22px 0px;
+  text-shadow: 3px 3px 4px black;
+
+  /* text-decoration-line: line-through;
+  text-decoration-color: blue;
+  text-decoration-style: solid;
+  text-decoration-thickness: 3px; */
+  /* text-decoration: underline;
+  border: 1px solid black; */
+}
+p {
+  text-align: justify;
+  /* text-transform: capitalize; */
+  /* text-indent: 2rem; */
+  /* letter-spacing: 0.5rem; */
+  /* line-height: 1.2em; */
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

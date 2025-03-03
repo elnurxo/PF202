@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.poster {
+  background-image: url("https://rukminim2.flixcart.com/image/850/1000/xif0q/poster/h/a/6/large-spiderman-wallpaper-on-hd-wall-fine-art-hd-picture-on-original-imah3jbmcnyegh9a.jpeg?q=90&crop=false");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  /* background-attachment: scroll; */
+  /* background-clip: ; */
+  /* background-origin: ; */
+  width: 70%;
+  border-radius: 20px;
+  height: 500px;
+  margin: 40px auto;
+  /* filter: blur(5px) grayscale(100%); */
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  transition: 1s;
+}
+.poster:hover {
+  filter: blur(0px) grayscale(0%);
+  /* scale: 1.1; */
+}

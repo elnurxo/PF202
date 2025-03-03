@@ -1,0 +1,76 @@
+/* h1::before {
+  content: "★ ";
+  color: gold;
+}
+h1::after {
+  content: " 🌍";
+  color: green;
+} */
+/* h1::first-letter {
+  color: red;
+}
+p::first-line {
+  background-color: beige;
+}
+li::marker {
+  color: red;
+}
+*::selection {
+  background-color: red;
+  color: white;
+}
+input::placeholder{
+    color: red;
+} */
+
+/* css specificity */
+/* tag name - 1 */
+/* class name - 10 */
+/* id name - 100 */
+/* universal selector (*) - 0 */
+
+/* 100 */
+/* #text {
+  color: blue;
+}
+h1 {
+  color: red;
+}
+
+p.text.content#header {
+  color: red;
+}
+#header {
+  color: blue !important;
+} */
+
+/* color name - red, blue, green, yellow, black */
+/* rgb - red, green,  blue */
+/* rgba - red, green, blue, alpha - opacity */
+/* hex code - #f01 */
+/* hsl - hue, saturation, lighting */
+/* hsla - hue, saturation, lighting, alpha (opacity) */
+/* 
+h1 {
+  color: orchid;
+}
+h2 {
+  color: rgb(229, 9, 20);
+}
+p {
+  color: rgba(256, 256, 0, 1);
+}
+button {
+  background-color: #006242;
+}
+h3 {
+  color: hsla(20, 100%, 50%, 0.5);
+} */
+
+h1 {
+  color: red;
+  border: 1px solid black;
+}
+span {
+  border: 1px solid black;
+}

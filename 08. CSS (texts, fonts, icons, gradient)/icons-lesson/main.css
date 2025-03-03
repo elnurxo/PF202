@@ -1,0 +1,41 @@
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0px;
+}
+ul li {
+  display: inline-block;
+  margin-right: 12px;
+}
+ul li a i {
+  font-size: 2.2em;
+}
+.fa-brands {
+  transition: 0.5s;
+}
+.fa-brands:hover {
+  scale: 0.9;
+}
+.fa-youtube {
+  color: red;
+}
+.fa-linkedin {
+  color: #0073ae;
+}
+.fa-github {
+  color: #2a2f35;
+}
+.fa-instagram {
+  background: linear-gradient(
+    45deg,
+    #f58529,
+    #feda77,
+    #dd2a7b,
+    #8134af,
+    #515bd4
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

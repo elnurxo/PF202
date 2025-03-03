@@ -1,0 +1,8 @@
+/* * - universal selector */
+/* #id - id selector */
+/* .class - class selector */
+/* tag name - tag name selector */
+
+[href^="https"] {
+  color: red;
+}

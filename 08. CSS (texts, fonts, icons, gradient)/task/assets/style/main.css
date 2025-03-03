@@ -1,0 +1,84 @@
+#hero {
+  width: 88%;
+  height: 500px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-image: url("https://www.responsiveclassroom.org/wp-content/uploads/2024/05/middle-school.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: opacity(0.9);
+  transition: 0.4s;
+}
+/* #hero:hover {
+  scale: 0.9;
+} */
+#title {
+  text-align: center;
+  margin-top: 16px;
+  cursor: not-allowed;
+  transition: 0.4s;
+}
+#title:hover {
+  letter-spacing: 0.2em;
+}
+#blog h2 {
+  text-align: center;
+  color: olive;
+}
+#blog {
+  width: 88%;
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+#blog p {
+  text-align: justify;
+  text-indent: 2em;
+}
+#video {
+  width: 88%;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+}
+#video iframe {
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+#profile {
+  width: 88%;
+  margin: 20px auto;
+  display: flex;
+  align-items: start;
+}
+#profile .img-wrapper {
+  width: 50%;
+  height: 400px;
+  border-radius: 50%;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  overflow: hidden;
+  cursor: pointer;
+}
+#profile .img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#profile hr {
+  margin: 18px auto;
+}
+#profile article {
+  margin-top: 25px;
+  margin-left: 50px;
+}
+#profile #social li {
+  display: inline-block;
+  margin-right: 16px;
+}
+#profile #social li i {
+  font-size: 2em;
+  color: darkblue;
+}

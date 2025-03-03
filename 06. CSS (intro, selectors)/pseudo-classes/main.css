@@ -1,0 +1,19 @@
+/* button {
+  background-color: hotpink;
+  color: white;
+  width: 150px;
+  height: 50px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+} */
+
+p:only-of-type{
+  color: red;
+}
+a:link{
+    color: red;
+}
+a:visited{
+    color: purple;
+}
