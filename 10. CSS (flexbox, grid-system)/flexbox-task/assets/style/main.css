@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+}
+#premium-cars {
+  font-family: "Roboto";
+  padding: 22px 0px;
+  padding-left: 16px;
+}
+.card {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: 0.3s linear;
+}
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.card:hover img {
+  transform: scale(1.1);
+}
+.card .card-top {
+  height: 200px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.salon {
+  position: absolute;
+  bottom: 7%;
+  left: 7%;
+  font-family: "Roboto";
+  color: white;
+  font-size: 0.7em;
+  background-color: #4264fd;
+  padding: 4px 6px;
+  border-radius: 6px;
+}
+.favorite {
+  position: absolute;
+  top: 7%;
+  right: 7%;
+}
+.favorite i {
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+.favorite i:hover {
+  color: red;
+}
+.card .card-top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s linear;
+}
+.card-bottom {
+  padding: 16px 0px 20px 12px;
+  color: #212c3a;
+  font-family: "Roboto";
+}
+.card-bottom #car-price {
+  font-size: 1.3em;
+}
+.card-bottom #car-name {
+  font-weight: 400;
+}
+.card-bottom .advertisement {
+  color: #8d94ad;
+}
+
+#contact h2 {
+  text-align: center;
+  padding: 32px 0px;
+}
+.form-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-wrapper form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0px 5em;
+}
+form input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border-color: lightgray;
+  resize: none;
+}
+form button {
+  border-radius: 6px;
+  padding: 12px;
+  border: none;
+  background-color: #ca1016;
+  color: white;
+}
+
+header {
+  height: 70px;
+  width: 100%;
+  background-color: #ca1016;
+}
+.header-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-wrapper .logo a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.2em;
+}
+.header-wrapper button {
+  background-color: #7ed321;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  padding: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+.header-wrapper button:hover {
+  background-color: #549114;
+}
