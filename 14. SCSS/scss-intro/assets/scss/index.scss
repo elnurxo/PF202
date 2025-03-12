@@ -1,0 +1,37 @@
+// @import "./reset";
+// @import "./home";
+@import "./mixins";
+
+
+
+.btn-primary {
+  @include btn-generator(
+    $hover-bgc: rgb(97, 152, 174),
+    $size: 12px,
+    $bgc: skyblue
+  );
+}
+.btn-success {
+  @include btn-generator(14px, rgb(28, 194, 28), green);
+}
+.btn-danger {
+  @include btn-generator(16px, rgb(152, 4, 4), red);
+}
+.btn-warning{
+    @include btn-generator(14px, orange, rgb(195, 195, 0));
+}
+
+
+
+body {
+  background-color: indianred;
+  @include respond-to("large") {
+    background-color: skyblue;
+  }
+  @include respond-to("medium") {
+    background-color: olive;
+  }
+  @include respond-to("small") {
+    background-color: hotpink;
+  }
+}

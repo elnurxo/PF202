@@ -1,0 +1,19 @@
+@use "../utils/variables" as vars;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+ul,
+li {
+  font-family: vars.$main-font;
+}
+
+a {
+  text-decoration: none;
+}

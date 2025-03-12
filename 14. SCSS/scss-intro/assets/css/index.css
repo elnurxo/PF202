@@ -1,0 +1,70 @@
+.btn-primary {
+  padding: 12px;
+  border-radius: 7px;
+  color: white;
+  background-color: skyblue;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s linear;
+}
+.btn-primary:hover {
+  background-color: rgb(97, 152, 174);
+}
+
+.btn-success {
+  padding: 14px;
+  border-radius: 7px;
+  color: white;
+  background-color: green;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s linear;
+}
+.btn-success:hover {
+  background-color: rgb(28, 194, 28);
+}
+
+.btn-danger {
+  padding: 16px;
+  border-radius: 7px;
+  color: white;
+  background-color: red;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s linear;
+}
+.btn-danger:hover {
+  background-color: rgb(152, 4, 4);
+}
+
+.btn-warning {
+  padding: 14px;
+  border-radius: 7px;
+  color: white;
+  background-color: rgb(195, 195, 0);
+  cursor: pointer;
+  border: none;
+  transition: 0.3s linear;
+}
+.btn-warning:hover {
+  background-color: orange;
+}
+
+body {
+  background-color: indianred;
+}
+@media (max-width: 1200px) {
+  body {
+    background-color: skyblue;
+  }
+}
+@media (max-width: 900px) {
+  body {
+    background-color: olive;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    background-color: hotpink;
+  }
+}/*# sourceMappingURL=index.css.map */

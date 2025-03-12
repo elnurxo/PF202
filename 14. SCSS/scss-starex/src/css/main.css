@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+ul,
+li {
+  font-family: "Poppins";
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  height: 60px;
+  background-color: #00005F;
+}
+header .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+header .header__left__side {
+  height: 100%;
+}
+header .header__left__side .apps {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+}
+header .header__left__side .apps img {
+  width: 60px;
+  height: 60px;
+}
+header .header__left__side .apps span {
+  color: white;
+  opacity: 0.5;
+  margin-left: 12px;
+}
+header .header__right__side ul.links {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 14px;
+       column-gap: 14px;
+}
+header .header__right__side ul.links li {
+  font-size: 0.9em;
+}
+header .header__right__side ul.links li a {
+  color: white;
+  opacity: 0.5;
+}
+header .header__right__side ul.links img {
+  width: 30px;
+  opacity: 1;
+}
+@media (max-width: 900px) {
+  header {
+    display: none;
+  }
+}
+
+.container {
+  width: 88%;
+  margin: 0 auto;
+}/*# sourceMappingURL=main.css.map */

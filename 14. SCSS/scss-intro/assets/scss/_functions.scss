@@ -1,0 +1,7 @@
+@function adjust-color($color, $amount) {
+  @return lighten($color, $amount);
+}
+
+.button {
+  background: adjust-color(blue, 20%); // Lightened blue
+}

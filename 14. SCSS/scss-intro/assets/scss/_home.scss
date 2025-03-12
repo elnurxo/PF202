@@ -1,0 +1,25 @@
+@use "./variables" as x;
+// variables
+h1 {
+  text-align: center;
+  font-family: x.$main-font;
+  color: x.$netflix-red;
+  border: x.$border;
+}
+
+.box {
+  width: 40%;
+  height: 400px;
+  border-radius: 10px;
+  margin: 20px auto;
+  background-color: x.$netflix-red;
+  &_content {
+    // border: $border;
+    &_title,
+    &_paragraph {
+      text-align: center;
+      color: white;
+      font-family: x.$main-font;
+    }
+  }
+}

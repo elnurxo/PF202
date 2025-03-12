@@ -1,0 +1,28 @@
+@mixin btn-generator($size, $hover-bgc, $bgc: gray) {
+  padding: $size;
+  border-radius: 7px;
+  color: white;
+  background-color: $bgc;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s linear;
+  &:hover {
+    background-color: $hover-bgc;
+  }
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "small" {
+    @media (max-width: 600px) {
+      @content;
+    }
+  } @else if $breakpoint == "medium" {
+    @media (max-width: 900px) {
+      @content;
+    }
+  } @else if $breakpoint == "large" {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+}
