@@ -1,0 +1,50 @@
+header {
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  background-color: $white;
+  box-shadow: $box-shadow;
+  .header-wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .logo {
+      a {
+        font-size: 26px;
+        font-weight: 200;
+      }
+    }
+  }
+  .mobile-menu-bar {
+    display: none;
+    @include respond-to(md) {
+      display: block;
+    }
+    i {
+      cursor: pointer;
+      font-size: 22px;
+    }
+  }
+  .links {
+    display: flex;
+    align-items: center;
+    column-gap: 1.5em;
+    font-family: "Poppins";
+    font-size: 16px;
+    @include respond-to(md) {
+      display: none;
+    }
+    a {
+      color: $link-color;
+      transition: 0.3s linear;
+      &:hover {
+        color: $link-hover-color;
+      }
+    }
+    #active a {
+      color: $link-hover-color !important;
+    }
+  }
+}

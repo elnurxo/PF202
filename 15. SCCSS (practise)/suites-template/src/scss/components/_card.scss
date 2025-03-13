@@ -1,0 +1,33 @@
+.card {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  &:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  &:hover img {
+    scale: 1.1;
+  }
+  .card-top {
+    height: 250px;
+    overflow: hidden;
+    img {
+      transition: 0.2s linear;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .card-content {
+    padding: 30px;
+    text-align: center;
+    h3 {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    span {
+      color: $link-color;
+    }
+  }
+}

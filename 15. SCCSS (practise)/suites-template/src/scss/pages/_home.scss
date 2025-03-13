@@ -1,0 +1,171 @@
+#hero {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../media/hero_2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.583);
+  }
+  article {
+    color: white;
+    z-index: 100;
+    user-select: none;
+    h1 {
+      text-align: center;
+      font-size: 64px;
+      font-weight: 700;
+      @include respond-to(md) {
+        font-size: 54px;
+      }
+    }
+    h5 {
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 1.25em;
+    }
+  }
+  .right-arrow,
+  .left-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 1.2em;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.305);
+    transition: 0.2s linear;
+    @include respond-to(md) {
+      display: none;
+    }
+    cursor: pointer;
+    &:hover {
+      background-color: black;
+    }
+  }
+  .left-arrow {
+    left: 3%;
+  }
+  .right-arrow {
+    right: 3%;
+  }
+}
+
+#our-rooms {
+  padding: 54px 0px;
+}
+
+#hotel-features {
+  padding: 54px 0px;
+  .feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 24px;
+    i {
+      color: $link-hover-color;
+      font-size: 5em;
+    }
+    h4 {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+}
+
+#promotion {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  @include respond-to(md) {
+    height: 350px;
+  }
+  background-image: url("https://preview.colorlib.com/theme/suites/images/hero_1.jpg.webp");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 100px 0px;
+  display: flex;
+  align-items: center;
+  .promo {
+    z-index: 100;
+    h2 {
+      color: white;
+      text-align: left;
+      font-size: 2em;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+    #btn {
+      border: 1px solid $yellow;
+      color: white;
+      text-transform: uppercase;
+      padding: 12px;
+      cursor: pointer;
+      transition: 0.2s linear;
+      &:hover {
+        background-color: $yellow;
+      }
+    }
+  }
+  .countdown {
+    z-index: 100;
+    h3 {
+      color: white;
+      font-size: 12px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.5em;
+      margin-bottom: 2em;
+    }
+    p {
+      color: white;
+      font-size: 16px;
+      font-weight: 400;
+      #date {
+        font-size: 34px;
+      }
+    }
+  }
+  .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.518);
+  }
+}
+
+#our-gallery {
+  padding: 54px 0px;
+  .gallery-item {
+    cursor: zoom-in;
+    overflow: hidden;
+    &:hover img {
+      opacity: 0.7;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.2s linear;
+    }
+  }
+}

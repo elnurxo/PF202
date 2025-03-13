@@ -1,0 +1,65 @@
+#hero {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://preview.colorlib.com/theme/suites/images/hero_2.jpg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.583);
+  }
+  article {
+    color: white;
+    z-index: 100;
+    user-select: none;
+    h1 {
+      text-align: center;
+      font-size: 64px;
+      font-weight: 700;
+      @include respond-to(md) {
+        font-size: 54px;
+      }
+    }
+    h5 {
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 1.25em;
+    }
+  }
+  .right-arrow,
+  .left-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 1.2em;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.305);
+    transition: 0.2s linear;
+    @include respond-to(md) {
+      display: none;
+    }
+    cursor: pointer;
+    &:hover {
+      background-color: black;
+    }
+  }
+  .left-arrow {
+    left: 3%;
+  }
+  .right-arrow {
+    right: 3%;
+  }
+}

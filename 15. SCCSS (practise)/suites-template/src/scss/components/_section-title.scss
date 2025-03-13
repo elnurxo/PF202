@@ -1,0 +1,22 @@
+.title {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 2em;
+  position: relative;
+  cursor: pointer;
+  &:hover::after {
+    width: 7%;
+  }
+  &::after {
+    transition: 0.3s linear;
+    position: absolute;
+    content: "";
+    display: block;
+    bottom: -15%;
+    width: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    background-color: black;
+  }
+}
