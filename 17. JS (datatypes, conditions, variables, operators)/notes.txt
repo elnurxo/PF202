@@ -1,0 +1,11 @@
+JS variables +
+data-types + 
+naming conventions +
+naming best practises +
+LET, VAR, CONST differences +
+Truthy-Falsy values +
+Type Conversions (implicit, explicit) +
+JS operators +
+Condition Statements - if,else,else if, switch case +
+Loop statements - for, foreach, while, do while
+JS arrays +
