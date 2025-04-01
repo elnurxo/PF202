@@ -1,0 +1,6 @@
+JS arrays +
+JS functions (reg, arr, anonym)
+String methods
+Array methods (basic, sort, iteration)
+Math object
+Date object
