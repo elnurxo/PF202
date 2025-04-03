@@ -1,0 +1,3 @@
+modules in JS
+REGEX
+array iteration methods
