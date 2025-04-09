@@ -1,0 +1,7 @@
+error handling, try catch +
+continue, break, custom methods
+recursion + 
+closures +
+json, nullish
+Practising all this objects, arrays as console app
+shallow copy (spread,obj.assign) vs deep copy (json.stringify.parse, lodash, manual func)
