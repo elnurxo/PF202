@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- google fonts cdn -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <!-- font awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- custom css -->
+  <link rel="stylesheet" href="./src/style/main.css">
+  <title>JS Quiz App</title>
+</head>
+
+<body>
+  <header class="px-[30px] h-[80px] bg-amber-400 flex justify-between items-center">
+    <div class="logo">
+      <img class="w-[100px] h-[100px] object-cover" src="./src/media/logo.png" alt="logo" title="logo">
+    </div>
+    <ul id="links" class="flex gap-5">
+      <li><a href="">Home</a></li>
+      <li><a href="">About</a></li>
+      <li><a href="">Setting</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <section id="quiz">
+      <div class="container mt-6 w-[90%] mx-auto">
+        <div class="flex gap-3">
+          <input id="search" type="text" placeholder="Search..."
+            class="w-[20%] px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+          <select
+            id="level-filter"
+            class="w-[15%] px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            <option value="all">All</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+          <button id="add-modal"
+            class="h-full cursor-pointer items-center w-[15%] bg-blue-400 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+            add new quiz
+          </button>
+        </div>
+        <!-- add quiz form -->
+        <form class="hidden flex gap-4 items-center justify-center shadow mt-6 py-5" id="add">
+          <input id="title" required type="text" placeholder="enter quiz title"
+            class="px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+          <input id="description" required type="text" placeholder="enter quiz description"
+            class="px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+          <select id="level"
+            class="px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+          <button type="submit"
+            class="h-full cursor-pointer items-center bg-blue-400 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+            submit
+          </button>
+        </form>
+        <!-- cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-5 quiz-wrapper">
+          <!-- Quiz Card -->
+         
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+
+</html>
