@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+/* modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+.modal.open {
+  display: flex;
+}
+.modal-content {
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.modal.open .modal-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+/* sidebar bars */
+#bars {
+  position: relative;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+#bars .bar {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: rgb(40, 40, 40);
+  border-radius: 5px;
+}

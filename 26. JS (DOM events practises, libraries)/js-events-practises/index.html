@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <!-- font awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- main css -->
+  <link rel="stylesheet" href="./src/css/style.css">
+  <title>JS Events App</title>
+</head>
+
+<body class="overflow-x-hidden">
+  <header class="relative z-100 h-[80px] bg-red-700 flex items-center justify-between w-full px-[60px]">
+    <div class="logo">
+      <a class="text-2xl font-bold text-white" href="#">
+        Code Academy
+      </a>
+    </div>
+    <ul id="nav-links" class="gap-6 hidden lg:flex">
+      <li>
+        <a class="text-white hover:text-gray-50 transition duration-100" href="#">Home</a>
+      </li>
+      <li>
+        <a class="text-white hover:text-gray-50 transition duration-100" href="#">About Us</a>
+      </li>
+      <li>
+        <a class="text-white hover:text-gray-50 transition duration-100" href="#">Contact Us</a>
+      </li>
+    </ul>
+
+    <!-- hamburger menu -->
+    <button id="bars" class="flex lg:hidden">
+      <span id="first-bar" class="bar transition duration-700"></span>
+      <span id="second-bar" class="bar transition duration-700"></span>
+      <span id="third-bar" class="bar transition duration-700"></span>
+    </button>
+  </header>
+
+
+
+  <main>
+    <!-- <section id="slider-section">
+      <h2 class="text-center my-4 text-2xl">Slider With JS/TailwindCSS</h2>
+      <div class="overflow-hidden relative slider flex max-w-5xl mx-auto shadow-2xl rounded h-[500px]">
+        <div class="slider-tracker flex rounded transition duration-500">
+          <div class="slider-item min-w-[100%]">
+            <img class="object-cover w-full h-auto"
+              src="https://w0.peakpx.com/wallpaper/307/244/HD-wallpaper-the-batman-movie-poster-art-the-batman-batman-superheroes-movies-2022-movies.jpg"
+              alt="batman">
+          </div>
+          <div class="slider-item min-w-[100%]">
+            <img class="object-cover w-full h-auto"
+              src="https://4kwallpapers.com/images/wallpapers/wicked-movie-poster-1920x1080-18391.jpeg" alt="wicked">
+          </div>
+          <div class="slider-item min-w-[100%]">
+            <img class="object-cover w-full h-auto"
+              src="https://w0.peakpx.com/wallpaper/731/134/HD-wallpaper-movie-shutter-island.jpg" alt="shutter island">
+          </div>
+          <div class="slider-item min-w-[100%]">
+            <img class="object-cover w-full h-auto"
+              src="https://res.cloudinary.com/upwork-cloud/image/upload/c_scale,w_1000/v1700796426/catalog/1600659718750367744/iqmiudmmo6s7zcofwmpf.jpg"
+              alt="shutter island">
+          </div>
+          <div class="slider-item min-w-[100%]">
+            <img class="object-cover w-full h-auto"
+              src="https://res.cloudinary.com/upwork-cloud/image/upload/c_scale,w_1000/v1700795880/catalog/1600659718750367744/xiry6ufbjttckqxpfzrw.jpg"
+              alt="shutter island">
+          </div>
+        </div>
+        <button
+          class="prev-btn absolute top-1/2 transform -translate-y-1/2 left-4 rounded-full w-14 h-14 bg-gray-300 opacity-60 flex justify-center items-center cursor-pointer hover:scale-95 transition">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button
+          class="next-btn absolute top-1/2 transform -translate-y-1/2 right-4 rounded-full w-14 h-14 bg-gray-300 opacity-60 flex justify-center items-center cursor-pointer hover:scale-95 transition">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </section> -->
+    <section id="modal-section">
+      <button id="openModalBtn"
+        class="block mx-auto my-4 cursor-pointer px-4 py-2 bg-red-500 text-white rounded-lg shadow hover:bg-blue-600">
+        Add Movie</button>
+
+      <div id="modal" class="modal">
+        <div class="modal-content bg-white rounded-lg shadow-lg p-6 max-w-md w-full">
+          <h2 class="text-2xl font-bold text-gray-700 mb-4">Add New Movie</h2>
+          <form id="addMovieForm" class="space-y-4">
+            <div class="flex gap-2">
+              <div>
+                <label for="movieTitle" class="block text-gray-600 font-medium mb-2">Title</label>
+                <input id="movieTitle" type="text"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-red-500"
+                  placeholder="Enter movie title">
+              </div>
+              <div>
+                <label for="movieGenre" class="block text-gray-600 font-medium mb-2">Genre</label>
+                <input id="movieGenre" type="text"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-red-500"
+                  placeholder="Enter movie genre">
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div>
+                <label for="releaseYear" class="block text-gray-600 font-medium mb-2">Release Year</label>
+                <input id="releaseYear" type="number"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-red-500"
+                  placeholder="Enter release year">
+              </div>
+              <div>
+                <label for="imdbRating" class="block text-gray-600 font-medium mb-2">IMDb Rating</label>
+                <input id="imdbRating" type="number" step="0.1"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-red-500"
+                  placeholder="Enter IMDb rating">
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div>
+                <label for="movieImage" class="block text-gray-600 font-medium mb-2">Image URL</label>
+                <input id="movieImage" type="url"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-red-500"
+                  placeholder="Enter image URL">
+              </div>
+              <div>
+                <label for="director" class="block text-gray-600 font-medium mb-2">Movie Director</label>
+                <input id="director" type="text"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-red-500"
+                  placeholder="Enter movie Director">
+              </div>
+            </div>
+            <div class="flex items-center justify-end gap-2">
+              <button id="closeModalBtn" type="button"
+                class="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg shadow hover:bg-gray-400">Cancel</button>
+              <button type="submit" class="px-4 py-2 bg-red-500 text-white rounded-lg shadow hover:bg-red-600">Add
+                Movie</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </section>
+    <section id="movies">
+      <div class="container w-[90%] mx-auto">
+        <h1 class="text-center text-gray-800 text-2xl font-bold mb-6">Movies With TailwindCSS/JS</h1>
+
+        <!-- Filters Section -->
+        <div class="flex flex-wrap justify-center gap-4 mb-6">
+          <input id="search"
+            class="w-64 border border-gray-300 focus:outline-none focus:border-red-500 shadow rounded px-4 py-2"
+            type="text" placeholder="Search movie...">
+
+          <select id="yearSorter"
+            class="w-48 border border-gray-300 focus:outline-none focus:border-red-500 shadow rounded px-4 py-2">
+            <option value="" disabled selected>Sort Movies By Year</option>
+            <option value="new-to-old">Newest to Oldest</option>
+            <option value="old-to-new">Oldest to Newest</option>
+          </select>
+
+          <select id="imdbFilter"
+            class="w-48 border border-gray-300 focus:outline-none focus:border-red-500 shadow rounded px-4 py-2">
+            <option value="">All IMDb Ratings</option>
+            <option value="0-2">0-2</option>
+            <option value="2-4">2-4</option>
+            <option value="4-6">4-6</option>
+            <option value="6-8">6-8</option>
+            <option value="8-10">8+</option>
+          </select>
+        </div>
+
+        <!-- genres for movies -->
+        <div class="flex flex-wrap justify-center gap-4 mt-6 genre-buttons">
+          <button class="genre-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-lg shadow hover:bg-gray-300">All
+            Genres</button>
+        </div>
+
+        <!-- Movies Grid -->
+        <div class="movies-parent mt-6 mb-6 gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+
+  <!-- side bar -->
+  <!-- <div
+    class="sidebar transform transition duration-500 -translate-x-[-400px] absolute right-0 top-0 sidebar w-[400px] z-90 min-h-full bg-blue-700">
+  </div> -->
+  <!-- side bar -->
+  <!-- <script src="./src/js/components/sidebar.js"></script> -->
+  <!-- modal js -->
+  <script src="./src/js/components/modal.js"></script>
+  <!-- slider js -->
+  <!-- <script src="./src/js/components/slider.js"></script> -->
+  <!-- main js -->
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+
+</html>
