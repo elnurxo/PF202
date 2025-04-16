@@ -63,10 +63,8 @@ export class MovieList {
   }
 
   giveAllGenres() {
-    const genresArr = this.movies.map((movie) => {
-      return movie.genre;
-    });
-
-    return genresArr;
+    const genresArr = this.movies.map((movie) => movie.genre);
+    const uniqueGenres = [...new Set(genresArr)];
+    return uniqueGenres;
   }
 }

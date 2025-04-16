@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <!-- font awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- main css -->
+  <link rel="stylesheet" href="./src/css/style.css">
+  <title>Home Page</title>
+</head>
+
+<body>
+  <header class="h-[80px] bg-emerald-700 w-full px-8 flex items-center justify-between">
+    <div class="logo">
+      <a class="text-white text-2xl hover:text-emerald-100" href="index.html">Code Market</a>
+    </div>
+    <ul id="links" class="flex gap-6 text-white">
+      <li><a class="hover:underline" href="index.html">Home</a></li>
+      <li><a class="hover:underline text-gray-300" href="basket.html">Basket <sup id="basket-length"></sup></a></li>
+    </ul>
+  </header>
+
+  <main>
+    <section id="products">
+      <div class="container w-[90%] mx-auto mt-12">
+        <h1 class="text-center text-xl mb-2">Products with Basket storage</h1>
+        <div class="products-wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./src/js/helpers/header.js"></script>
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+
+</html>
