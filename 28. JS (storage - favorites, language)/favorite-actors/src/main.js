@@ -4,7 +4,7 @@ const actorList = document.querySelector("#actors");
 const errorMessage = document.querySelector(".error-message");
 const addButton = document.querySelector("#add-btn");
 
-let actors = [];
+let actors = JSON.parse(localStorage.getItem("favorites")) || [];
 var notyf = new Notyf({
   duration: 1500,
   position: {
@@ -21,12 +21,18 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     //local favorites var
     const storedActors = JSON.parse(localStorage.getItem("favorites"));
-    renderList(storedActors, true);
+    renderList(storedActors);
   }
 
   //detect initial language
-  const storedLanguage = JSON.parse(localStorage.getItem("language"));
-  renderLanguage(storedLanguage);
+  if (!JSON.parse(localStorage.getItem("language"))) {
+    localStorage.setItem("language", "en"); // default language is english
+  } else {
+    const storedLanguage = JSON.parse(localStorage.getItem("language"));
+    renderLanguage(storedLanguage);
+    const languageSelect = document.querySelector("#language");
+    languageSelect.value = storedLanguage;
+  }
 });
 
 //input keyup - validation
@@ -42,7 +48,9 @@ addForm.addEventListener("submit", function (e) {
   resetForm();
   notyf.success(`${actorName} added to list!`);
   actors.push(actorName); // ["Leonardo Dicaprio"]
-  renderList(actors, false);
+  renderList(actors);
+  addButton.disabled = true;
+  addButton.classList.replace("bg-neutral-700", "bg-red-700");
 });
 
 //helper functions
@@ -66,39 +74,54 @@ function validateForm(actorName) {
 function resetForm() {
   actorInput.value = "";
 }
-function renderList(arr, fromLocal) {
+function renderList(arr) {
   actorList.innerHTML = "";
+
+  // Fetch the favorites list from localStorage
+  const storedActors = JSON.parse(localStorage.getItem("favorites")) || [];
+
+  // Loop through the actors list and display them
   arr.forEach((actor) => {
-    actorList.innerHTML += `<li class="mb-2 flex justify-between w-full py-4 bg-gray-100 px-6 rounded hover:shadow-md transition cursor-pointer">
-      <span id="actor-name">${actor}</span>
-      <button data-name="${actor}" class="favorite cursor-pointer hover:scale-95 transition"><i class="${
-      fromLocal ? "fa-solid" : "fa-regular"
-    } fa-star ${fromLocal && "text-yellow-500"}"></i></button>
-    </li>`;
+    // Check if the actor is in the favorites list
+    const isFavorite = storedActors.includes(actor);
+
+    // Render the actor with the appropriate star icon
+    actorList.innerHTML += `
+      <li class="mb-2 flex justify-between w-full py-4 bg-gray-100 px-6 rounded hover:shadow-md transition cursor-pointer">
+        <span id="actor-name">${actor}</span>
+        <button data-name="${actor}" class="favorite cursor-pointer hover:scale-95 transition">
+          <i class="${isFavorite ? "fa-solid" : "fa-regular"} fa-star ${
+      isFavorite ? "text-yellow-500" : ""
+    }"></i>
+        </button>
+      </li>
+    `;
   });
 
-  //get all favorite buttons
+  // Get all the favorite buttons and add event listeners
   const favoriteButtons = document.querySelectorAll(".favorite");
   favoriteButtons.forEach((btn) => {
     btn.addEventListener("click", function () {
       const actorName = this.getAttribute("data-name");
-      const storedActors = JSON.parse(localStorage.getItem("favorites"));
+      const storedActors = JSON.parse(localStorage.getItem("favorites")) || [];
+
       if (storedActors.find((x) => x === actorName)) {
-        //delete from favorites
-        localStorage.setItem(
-          "favorites",
-          JSON.stringify([...storedActors.filter((x) => x != actorName)])
-        );
-        notyf.success(`${actorName} removed to favorites!`);
+        // Remove from favorites
+        const updatedFavorites = storedActors.filter((x) => x !== actorName);
+        localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+        notyf.success(`${actorName} removed from favorites!`);
+
+        // Update the icon
         const icon = this.children[0];
         icon.classList.replace("fa-solid", "fa-regular");
         icon.classList.remove("text-yellow-500");
       } else {
-        localStorage.setItem(
-          "favorites",
-          JSON.stringify([...storedActors, actorName])
-        );
+        // Add to favorites
+        storedActors.push(actorName);
+        localStorage.setItem("favorites", JSON.stringify(storedActors));
         notyf.success(`${actorName} added to favorites!`);
+
+        // Update the icon
         const icon = this.children[0];
         icon.classList.replace("fa-regular", "fa-solid");
         icon.classList.add("text-yellow-500");
@@ -106,7 +129,6 @@ function renderList(arr, fromLocal) {
     });
   });
 }
-
 //changing language
 const title = {
   en: "Favorite Actors app with LocalStorage",
