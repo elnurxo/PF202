@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- toaster css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
     <!-- main css -->
     <link rel="stylesheet" href="./src/css/style.css">
     <title>Basket Page</title>
@@ -27,10 +29,69 @@
         </div>
         <ul id="links" class="flex gap-6 text-white">
             <li><a class="hover:underline text-gray-300" href="index.html">Home</a></li>
-            <li><a class="hover:underline shadow-2xl " href="basket.html">Basket</a></li>
+            <li><a class="hover:underline shadow-2xl " href="basket.html">Basket <sup id="basket-length"></sup></a></li>
         </ul>
     </header>
 
+    <main>
+        <div class="min-h-screen bg-gray-50 p-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-8">🛍️ Your Shopping Basket</h2>
+                <!-- Product Table -->
+                <div class="bg-white shadow rounded-lg overflow-hidden">
+                    <table class="min-w-full text-sm text-gray-700">
+                        <thead class="bg-gray-100 text-xs uppercase text-gray-500">
+                            <tr>
+                                <th class="p-4 text-left">Product</th>
+                                <th class="p-4 text-left">Price</th>
+                                <th class="p-4 text-center">Quantity</th>
+                                <th class="p-4 text-left">Total</th>
+                                <th class="p-4 text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+
+                    </table>
+                </div>
+
+                <!-- Order Summary Card -->
+                <div class="mt-10 flex justify-end card">
+
+                    <div class="w-full max-w-md bg-white rounded-xl shadow p-6 space-y-4">
+                        <form id="coupon-form" class="flex gap-2">
+                            <input class="w-full p-1 border border-gray-200 rounded" type="text"
+                                placeholder="enter coupon...">
+                            <button class="bg-lime-700 rounded px-4 py-1 text-white" type="submit">apply</button>
+                        </form>
+                        <h3 class="text-lg font-semibold">Order Summary</h3>
+                        <div class="flex justify-between text-sm">
+                            <span>Subtotal</span>
+                            <span id="sub-total-element">$95.00</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Shipping</span>
+                            <span>$5.00</span>
+                        </div>
+                        <hr />
+                        <div class="flex justify-between text-base font-semibold">
+                            <span>Total</span>
+                            <span id="total-element">$100.00</span>
+                        </div>
+                        <button
+                            class="order w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition cursor-pointer">
+                            Proceed to Payment
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- toaster script -->
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script type="module" src="./src/js/helpers/header.js"></script>
     <script type="module" src="./src/js/helpers/header.js"></script>
     <script type="module" src="./src/js/basket.js"></script>
 </body>

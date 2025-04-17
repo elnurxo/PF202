@@ -14,7 +14,7 @@ export class Basket {
       if (found) {
         found.quantity++;
       } else {
-        this.basketItems.push({ ...newBasketItem, quantity: 1 });
+        this.basketItems.push({ id: newBasketItem.id, quantity: 1 });
       }
 
       localStorage.setItem("basket", JSON.stringify([...this.basketItems]));
@@ -39,6 +39,12 @@ export class Basket {
     }
   }
 
+  removeAllQuantity(id) {
+    const idx = this.basketItems.findIndex((x) => x.id == id);
+    this.basketItems.splice(idx, 1);
+    localStorage.setItem("basket", JSON.stringify([...this.basketItems]));
+  }
+
   clearAllBasket() {
     this.basketItems = [];
     localStorage.setItem("basket", JSON.stringify([]));
@@ -49,6 +55,6 @@ export class Basket {
   }
 
   getBasketCount() {
-    return this.basketItems.length;
+    return [...this.basketItems].length;
   }
 }

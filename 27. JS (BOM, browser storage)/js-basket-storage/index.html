@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- toaster css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
   <!-- main css -->
   <link rel="stylesheet" href="./src/css/style.css">
   <title>Home Page</title>
@@ -32,16 +34,17 @@
   </header>
 
   <main>
-    <section id="products">
+    <section id="products" class="mb-6">
       <div class="container w-[90%] mx-auto mt-12">
-        <h1 class="text-center text-xl mb-2">Products with Basket storage</h1>
+        <h1 class="text-center text-2xl font-bold mb-6">Products with Basket storage</h1>
         <div class="products-wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
-
         </div>
       </div>
     </section>
   </main>
 
+  <!-- toaster script -->
+  <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
   <script type="module" src="./src/js/helpers/header.js"></script>
   <script type="module" src="./src/js/main.js"></script>
 </body>
