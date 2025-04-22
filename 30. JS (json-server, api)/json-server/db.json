@@ -1,0 +1,47 @@
+{
+  "movies": [
+    {
+      "id": "2",
+      "title": "Movie 2",
+      "rating": 9.5
+    },
+    {
+      "id": "86ed",
+      "title": "New Movie",
+      "rating": 6.5
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "john_doe",
+      "email": "john@gmail.com",
+      "password": "John123"
+    },
+    {
+      "id": "2",
+      "username": "becky123",
+      "email": "becky@gmail.com",
+      "password": "Becky1234"
+    },
+    {
+      "id": "3",
+      "username": "adam_sandler",
+      "email": "adam@gmail.com",
+      "password": "Adam1"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "userId": "2",
+      "content": "great movie!"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "title": "snickers"
+    }
+  ]
+}

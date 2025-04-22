@@ -1,0 +1,100 @@
+{
+  "groups": [
+    {
+      "id": "1",
+      "title": "PF202",
+      "major": "Frontend development",
+      "teacher": "Elnur Khalilov",
+      "mentor": "Emil Gasarayev",
+      "isActive": true,
+      "membersCount": 8,
+      "currentModule": "Javascript",
+      "room": "Moon"
+    },
+    {
+      "id": "2",
+      "title": "PF402",
+      "major": "Frontend development",
+      "teacher": "Elnur Khalilov",
+      "mentor": "Orxan Abdullayev",
+      "isActive": true,
+      "membersCount": 12,
+      "currentModule": "NextJS",
+      "room": "Saturn"
+    },
+    {
+      "id": "3",
+      "title": "PB101",
+      "major": "Backend development",
+      "teacher": "Kenan Abbasov",
+      "mentor": "Eli Veliyev",
+      "isActive": false,
+      "membersCount": 17,
+      "currentModule": "C#",
+      "room": "Moon"
+    },
+    {
+      "id": "2e91",
+      "title": "Provident fugiat p",
+      "major": "Ex qui exercitatione",
+      "teacher": "Eum deserunt aut vol",
+      "mentor": "Dolor pariatur Null",
+      "isActive": true,
+      "memberCount": "16",
+      "currentModule": "Consequatur Facilis",
+      "room": "Voluptas aut volupta"
+    },
+    {
+      "id": "6aa3",
+      "title": "Voluptate dolorem al",
+      "major": "Dolorem rerum est s",
+      "teacher": "Assumenda alias tene",
+      "mentor": "Tempore in tempor r",
+      "isActive": true,
+      "memberCount": "9",
+      "currentModule": "Eos quaerat neque e",
+      "room": "Aut mollit et ea ab "
+    }
+  ],
+  "majors": [
+    {
+      "id": "1",
+      "title": "Frontend development"
+    },
+    {
+      "id": "2",
+      "title": "Backend development"
+    },
+    {
+      "id": "3",
+      "title": "Graphic Design"
+    },
+    {
+      "id": "4",
+      "title": "Digital Marketing"
+    },
+    {
+      "id": "5",
+      "title": "Cyber Security"
+    },
+    {
+      "id": "6",
+      "title": "Data Science"
+    }
+  ],
+  "movies": [
+    {
+      "id": "1",
+      "title": "",
+      "rating": 5.5,
+      "director": "",
+      "genres": [
+        "action",
+        "drama"
+      ],
+      "year": 2011,
+      "posterURL": "",
+      "isWatched": false
+    }
+  ]
+}
