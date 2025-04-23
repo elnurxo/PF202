@@ -1,0 +1,44 @@
+{
+  "cities": [
+    {
+      "id": "1",
+      "name": "Baku",
+      "country": "Azerbaijan",
+      "description": "Azerbaijan, the nation and former Soviet republic, is bounded by the Caspian Sea and Caucasus Mountains, which span Asia and Europe. Its capital, Baku, is famed for its medieval walled Inner City. Within the Inner City lies the Palace of the Shirvanshahs, a royal retreat dating to the 15th century, and the centuries-old stone Maiden Tower, which dominates the city skyline. ",
+      "flagURL": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Azerbaijan.svg",
+      "isCapital": true
+    },
+    {
+      "id": "2",
+      "name": "Hamburg",
+      "country": "Germany",
+      "description": "Germany is a Western European country with a landscape of forests, rivers, mountain ranges and North Sea beaches. It has over 2 millennia of history. Berlin, its capital, is home to art and nightlife scenes, the Brandenburg Gate and many sites relating to WWII. Munich is known for its Oktoberfest and beer halls, including the 16th-century Hofbräuhaus. Frankfurt, with its skyscrapers, houses the European Central Bank. ",
+      "flagURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/2560px-Flag_of_Germany.svg.png",
+      "isCapital": false
+    },
+    {
+      "id": "3",
+      "name": "Istanbul",
+      "country": "Turkey",
+      "description": "Turkey, officially the Republic of Türkiye, is a country mainly located in Anatolia in West Asia, with a relatively small part called East Thrace in Southeast Europe.",
+      "flagURL": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg",
+      "isCapital": false
+    },
+    {
+      "id": "4",
+      "name": "Paris",
+      "country": "France",
+      "description": "France, in Western Europe, encompasses medieval cities, alpine villages and Mediterranean beaches. Paris, its capital, is famed for its fashion houses, classical art museums including the Louvre and monuments like the Eiffel Tower. The country is also renowned for its wines and sophisticated cuisine. Lascaux’s ancient cave drawings, Lyon’s Roman theater and the vast Palace of Versailles attest to its rich history. ",
+      "flagURL": "https://cdn11.bigcommerce.com/s-2lbnjvmw4d/images/stencil/1280x1280/products/2924/4925/francematerial__52340.1738246320.jpg?c=2",
+      "isCapital": true
+    },
+    {
+      "id": "e282",
+      "name": "Havana",
+      "country": "Cuba",
+      "flagURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Flag_of_Cuba.svg/1200px-Flag_of_Cuba.svg.png",
+      "description": "Cuba, officially the Republic of Cuba, is an island country, comprising the island of Cuba, Isla de la Juventud, and 4,195 islands, islets and cays surrounding the main island. It is located where the northern Caribbean Sea, Gulf of Mexico, and Atlantic Ocean meet. ",
+      "isCapital": true
+    }
+  ]
+}

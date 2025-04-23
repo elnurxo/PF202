@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+  <!-- main css -->
+  <link rel="stylesheet" href="./src/css/style.css">
+  <title>Cities App</title>
+</head>
+
+<body>
+  <header class="text-white h-[80px] bg-blue-500 px-12 flex items-center justify-between">
+    <h1 class="text-2xl">
+      <span>Code</span>
+      <span class="text-gray-300">Academy</span>
+    </h1>
+    <nav class="hidden lg:flex gap-6">
+      <a class="hover:underline" href="index.html">Home</a>
+      <a class="hover:underline" href="add.html">Add</a>
+    </nav>
+    <button class="text-3xl block lg:hidden bars">
+      🍔
+    </button>
+  </header>
+
+  <main>
+    <section class="container mx-auto w-[95%]" id="cities">
+      <h2 class="text-center my-6 text-3xl text-gray-700">Cities App</h2>
+      <input autocomplete="off" id="search" class="border p-4 border-gray-300 rounded mb-2" type="text"
+        placeholder="search for city...">
+      <div class="cities gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./src/js/pages/home.js"></script>
+</body>
+
+</html>

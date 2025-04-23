@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="./src/css/style.css">
+    <title>Cities App | Add</title>
+</head>
+
+<body>
+    <header class="text-white h-[80px] bg-blue-500 px-12 flex items-center justify-between">
+        <h1 class="text-2xl">
+            <span>Code</span>
+            <span class="text-gray-300">Academy</span>
+        </h1>
+        <nav class="hidden lg:flex gap-6">
+            <a class="hover:underline" href="index.html">Home</a>
+            <a class="hover:underline" href="add.html">Add</a>
+        </nav>
+        <button class="text-3xl block lg:hidden bars">
+            🍔
+        </button>
+    </header>
+
+    <main>
+        <section class="container mx-auto w-[95%]" id="cities">
+            <h2 class="text-center my-6 text-3xl text-gray-700">Add New City</h2>
+            <form class="flex flex-col gap-2.5 border rounded border-gray-300 p-4 mx-auto w-[50%]" id="city-form">
+                <input id="city-name" class="outline-none border border-gray-200 rounded p-2" required type="text"
+                    placeholder="city name...">
+                <span id="error-city-name" class="text-red-500 text-xs"></span>
+                <input id="country-name" class="outline-none border border-gray-200 rounded p-2" required type="text"
+                    placeholder="county name...">
+                <span id="error-country-name" class="text-red-500 text-xs"></span>
+                <input id="flag" class="outline-none border border-gray-200 rounded p-2" required type="url"
+                    placeholder="flag url...">
+                <span id="error-flag" class="text-red-500 text-xs"></span>
+                <textarea class="border outline-none border-gray-200 rounded p-2" name="description"
+                    placeholder="country description" id="description"></textarea>
+                <span id="error-description" class="text-red-500 text-xs"></span>
+                <div>
+                    <label class="select-none" for="isCapital">is Capital?</label>
+                    <input id="isCapital" type="checkbox">
+                </div>
+                <div class="flex justify-end">
+                    <button disabled id="add-btn" type="submit"
+                        class="disabled:bg-red-200 disabled:cursor-not-allowed cursor-pointer mr-2.5 px-4 py-2 rounded hover:shadow-2xl transition bg-blue-500 text-white">add
+                        city</button>
+                    <button type="reset"
+                        class="cursor-pointer px-4 py-2 rounded hover:shadow-2xl transition bg-red-500 text-white">cancel</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script type="module" src="./src/js/pages/add.js"></script>
+</body>
+
+</html>

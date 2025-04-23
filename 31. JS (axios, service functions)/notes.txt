@@ -2,8 +2,10 @@ JSON-SERVER +
 MOCK API +
 POSTMAN / THUNDER-CLIENT +
 API REQUESTS WITH DOM +
+-----------------------------------------
 AXIOS basics
 AXIOS (instance, interceptors)
+-----------------------------------------
 API authentication
 SERVICE FUNCTIONS (module, error-handling)
 GLOBAL ERROR HANDLING
