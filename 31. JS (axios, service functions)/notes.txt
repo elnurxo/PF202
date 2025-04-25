@@ -2,14 +2,14 @@ JSON-SERVER +
 MOCK API +
 POSTMAN / THUNDER-CLIENT +
 API REQUESTS WITH DOM +
------------------------------------------
-AXIOS basics
-AXIOS (instance, interceptors)
------------------------------------------
-API authentication
-SERVICE FUNCTIONS (module, error-handling)
-GLOBAL ERROR HANDLING
-FETCH OPTIONS OBJECT IN DEEP
 PUBLIC APIS (api-keys) +
+-----------------------------------------
+AXIOS basics +
+AXIOS (instance, interceptors) +
+SERVICE FUNCTIONS (module, error-handling) +
+FETCH OPTIONS OBJECT IN DEEP +
+-----------------------------------------
+API authentication ...
+GLOBAL ERROR HANDLING
 FILE-READER, DRAG-DROP
-JS PLUGINS
+JS PLUGINS (micromodal, notyf, swiper, tabs, )

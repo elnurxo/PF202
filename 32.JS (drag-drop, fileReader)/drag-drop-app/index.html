@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- toaster cdn link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./src/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS Game</title>
+</head>
+
+<body>
+  <section class="bg-blue-100 h-screen w-full flex flex-col justify-center items-center" id="animals-game">
+    <h1 class="text-gray-800 text-center text-3xl font-semibold">Sort Animals Game 🐾</h1>
+    <div class="animals gap-4 flex mt-3">
+      <div draggable="true" data-type="air"
+        class="animal bg-white p-4 text-2xl rounded-xl cursor-grab hover:shadow-xl transition duration-300">🦜</div>
+      <div draggable="true" data-type="land"
+        class="animal bg-white p-4 text-2xl rounded-xl cursor-grab hover:shadow-xl transition duration-300">🐘</div>
+      <div draggable="true" data-type="land"
+        class="animal bg-white p-4 text-2xl rounded-xl cursor-grab hover:shadow-xl transition duration-300">🦘</div>
+      <div draggable="true" data-type="water"
+        class="animal bg-white p-4 text-2xl rounded-xl cursor-grab hover:shadow-xl transition duration-300">🐠</div>
+      <div draggable="true" data-type="water"
+        class="animal bg-white p-4 text-2xl rounded-xl cursor-grab hover:shadow-xl transition duration-300">🦈</div>
+      <div draggable="true" data-type="air"
+        class="animal bg-white p-4 text-2xl rounded-xl cursor-grab hover:shadow-xl transition duration-300">🦅</div>
+    </div>
+    <div class="zones mt-6 gap-6 grid grid-cols-1 md:grid-col-2 lg:grid-cols-3">
+      <div data-accept="land"
+        class="zone flex flex-col gap-1 bg-green-200 border-4 p-4 border-dashed border-gray-700 rounded-3xl w-48 min-h-48 max-h-full">
+        <h3 class="text-center text-lg">Land 🌎</h3>
+      </div>
+      <div data-accept="air"
+        class="zone flex flex-col gap-1 bg-sky-200 border-4 p-4 border-dashed border-gray-700 rounded-3xl w-48 min-h-48 max-h-full">
+        <h3 class="text-center text-lg">Air ☁️</h3>
+      </div>
+      <div data-accept="water"
+        class="zone flex flex-col gap-1 bg-blue-200 border-4 p-4 border-dashed border-gray-700 rounded-3xl w-48 min-h-48 max-h-full">
+        <h3 class="text-center text-lg">Water 🌊</h3>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="bg-yellow-100 min-h-screen py-12 w-full" id="movies-app">
+    <h1 class="text-gray-800 text-center text-3xl font-semibold">Movie File Upload 🎥</h1>
+    <form id="movie-form" class="w-[25%] mx-auto mt-4 bg-white px-6 py-6 rounded-xl flex flex-col gap-2">
+      <div class="cursor-grab drop-zone w-full h-40 border border-dashed rounded-2xl flex justify-center items-center">
+        <span class="font-bold text-4xl">+</span>
+      </div>
+      <input id="file-input" class="bg-blue-500 text-white p-4 rounded-2xl cursor-pointer" type="file" accept="image/*">
+      <input id="title" class="border border-gray-600 p-2 rounded-xl outline-0" type="text"
+        placeholder="movie title...">
+      <button
+        class="bg-yellow-500 text-white py-2 px-6 rounded-lg hover:shadow-lg transition duration-500 cursor-pointer"
+        type="submit">add</button>
+    </form>
+
+    <div class="cards mt-6 gap-6 container w-[90%] mx-auto movies grid grid-cols-1 md:grid-col-2 lg:grid-cols-3">
+    </div>
+  </section>
+
+  <!-- toaster cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+  <!-- confetti js script cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+  <script src="./src/js/main.js"></script>
+</body>
+
+</html>

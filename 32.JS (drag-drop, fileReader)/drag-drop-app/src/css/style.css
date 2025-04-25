@@ -1,0 +1,5 @@
+@import "tailwindcss";
+@import 'animate.css';
+* {
+  font-family: "Roboto";
+}
