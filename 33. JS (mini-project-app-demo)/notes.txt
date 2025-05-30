@@ -1,0 +1,50 @@
+animation library
+validation library
+table library
+confetti (order)
+
+--API endpoints--
+:users (basket)
+:menu (reviews)
+:reservations
+:messages
+:orders
+:coupons?
+
+-----pages (restaurant)
+--home +  (make reservation)  ✔️
+--menu.html + ✔️
+--menu detail + ✔️
+--user + ✔️ (not finished)
+--login + ✔️
+--register + ✔️
+--basket + (checkout)
+--contact + ✔️
+--about + ✔️
+
+--admin pages--
+-dashboard + ✔️
+-reservations +
+-orders (update modal) +
+-menu (add, edit - modal) +
+-user (ban, freeze) +
+-messages (delete) +
+
+
+-----------------features----------------------------
+loading
+
+----------------------------------------------------------------
+GridJS for tables
+Top Tailwind CSS Component Libraries
+DaisyUI
+Flowbite
+Meraki UI
+Tailwind UI (by Tailwind Labs)
+Kutty
+Preline UI
+Tailwind Elements
+HyperUI
+Gust UI
+Treact
+

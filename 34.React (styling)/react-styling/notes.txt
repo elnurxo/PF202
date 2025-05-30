@@ -1,0 +1,22 @@
+REACT STYLING
+------------------------
+1. Inline CSS (style object)
+-- CSS object +
+2. CSS in JS (emotion) +
+3. Styled Components +
+4. CSS module +
+5. SCSS in REACT +
+6. Tailwind CSS +
+7. Material UI, ant design, shadcn, flowbite
+
+
+----------------------------------
+React UI libraries
+MUI +, ant design, flowbite +, shadcn, chakraUI, react bootstrap, prime react,
+next UI, semantic UI react, grommet, onsen UI, tailwindUI, coreUI, blueprintUI,
+react suite, mantine, react-admin, radix ui, headless ui, park ui, tremor
+
+------------------------------
+
+
+
