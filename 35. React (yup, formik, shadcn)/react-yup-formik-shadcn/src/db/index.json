@@ -1,0 +1,67 @@
+{
+  "courses": [
+    {
+      "id": "1",
+      "title": "JavaScript Basics",
+      "price": 899.99,
+      "description": "Learn the fundamentals of JavaScript including variables, functions, loops, and DOM manipulation.",
+      "duration": "4 weeks"
+    },
+    {
+      "id": "2",
+      "title": "React.js for Beginners",
+      "price": 1099.99,
+      "description": "Master the basics of React including components, props, state, and hooks to build interactive UIs.",
+      "duration": "5 weeks"
+    },
+    {
+      "id": "3",
+      "title": "Node.js & Express Backend",
+      "price": 1199.99,
+      "description": "Build scalable backend applications using Node.js, Express, REST APIs, and middleware.",
+      "duration": "6 weeks"
+    },
+    {
+      "id": "4",
+      "title": "MongoDB Essentials",
+      "price": 799.99,
+      "description": "Understand NoSQL database concepts, CRUD operations, and schema design using MongoDB.",
+      "duration": "3 weeks"
+    },
+    {
+      "id": "5",
+      "title": "Frontend with HTML & CSS",
+      "price": 599.99,
+      "description": "Learn to structure and style modern websites using semantic HTML and advanced CSS techniques.",
+      "duration": "4 weeks"
+    },
+    {
+      "id": "6",
+      "title": "Fullstack MERN Bootcamp",
+      "price": 1999.99,
+      "description": "A complete bootcamp to build fullstack applications using MongoDB, Express, React, and Node.js.",
+      "duration": "8 weeks"
+    },
+    {
+      "id": "3352",
+      "title": "Digital Marketing",
+      "price": 299,
+      "description": "marketing course for beginners.",
+      "duration": "5 weeks"
+    },
+    {
+      "id": "a637",
+      "title": "Graphic Design",
+      "price": 455,
+      "description": "graphic design course for beginners.",
+      "duration": "7 weeks"
+    },
+    {
+      "id": "1d01",
+      "title": "AI course",
+      "price": 500,
+      "description": "AI seminar for advanced people.",
+      "duration": "9 weeks"
+    }
+  ]
+}
