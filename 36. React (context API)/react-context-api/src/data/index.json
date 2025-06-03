@@ -1,0 +1,124 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "JavaScript Essentials",
+      "description": "A complete guide to mastering JavaScript for web development.",
+      "author": "Ethan Moore",
+      "year": 2021,
+      "genre": "Programming",
+      "coverImage": "https://cdn.kobo.com/book-images/5d667f18-b180-4fca-82fe-efe7b694583d/1200/1200/False/javascript-programming-2.jpg",
+      "price": 19.99
+    },
+    {
+      "id": "2",
+      "title": "The Silent Library",
+      "description": "A thrilling mystery set in a hidden library beneath the city.",
+      "author": "Clara Hill",
+      "year": 2018,
+      "genre": "Mystery",
+      "coverImage": "https://m.media-amazon.com/images/M/MV5BMThiYjM3MTEtNmY3MS00NDEyLWJmNDUtZDQyNjFiYWM2ZDY4XkEyXkFqcGc@._V1_.jpg",
+      "price": 14.99
+    },
+    {
+      "id": "3",
+      "title": "React in Action",
+      "description": "A practical book for learning React and building dynamic UIs.",
+      "author": "Jordan Blake",
+      "year": 2022,
+      "genre": "Technology",
+      "coverImage": "https://images.manning.com/book/4/dbe54e5-e0a2-43f0-a122-7d3ce329535c/Thomas-React-HI.png",
+      "price": 22.5
+    },
+    {
+      "id": "4",
+      "title": "Echoes of Time",
+      "description": "A historical fiction novel about love, loss, and legacy.",
+      "author": "Nina Carson",
+      "year": 2015,
+      "genre": "Historical Fiction",
+      "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1558884841i/46018805.jpg",
+      "price": 11.99
+    },
+    {
+      "id": "5",
+      "title": "The Art of CSS",
+      "description": "Learn how to create stunning web interfaces with modern CSS techniques.",
+      "author": "Liam West",
+      "year": 2020,
+      "genre": "Design",
+      "coverImage": "https://m.media-amazon.com/images/I/51hNgHP70gL._AC_UF1000,1000_QL80_.jpg",
+      "price": 18.0
+    },
+    {
+      "id": "6",
+      "title": "Node.js Unleashed",
+      "description": "Build scalable backends with Node.js using real-world examples.",
+      "author": "Maya Singh",
+      "year": 2023,
+      "genre": "Technology",
+      "coverImage": "https://prodimage.images-bn.com/pimages/9781456657482_p0_v1_s1200x630.jpg",
+      "price": 24.99
+    },
+    {
+      "id": "7",
+      "title": "Whispers in the Code",
+      "description": "A cyber-thriller where AI turns against its creators.",
+      "author": "Alex Knight",
+      "year": 2019,
+      "genre": "Science Fiction",
+      "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1518053125i/38457789.jpg",
+      "price": 16.75
+    },
+    {
+      "id": "8",
+      "title": "Learning SQL the Fun Way",
+      "description": "A beginner-friendly approach to mastering SQL with practical exercises.",
+      "author": "Rachel Kim",
+      "year": 2021,
+      "genre": "Education",
+      "coverImage": "https://m.media-amazon.com/images/I/81xkjj+FAfL._AC_UF1000,1000_QL80_.jpg",
+      "price": 17.49
+    },
+    {
+      "id": "9",
+      "title": "The Minimalist Coder",
+      "description": "Improve your productivity and write clean, efficient code.",
+      "author": "Sam Torres",
+      "year": 2020,
+      "genre": "Self-Help",
+      "coverImage": "https://images-platform.99static.com/dTMu_ytk9gIjHBENLMS0_tl3Jxs=/0x0:2000x2000/500x500/top/smart/99designs-contests-attachments/102/102562/attachment_102562134",
+      "price": 13.0
+    },
+    {
+      "id": "10",
+      "title": "UI/UX for Beginners",
+      "description": "Understand the basics of user interface and user experience design.",
+      "author": "Emily Rhodes",
+      "year": 2022,
+      "genre": "Design",
+      "coverImage": "https://m.media-amazon.com/images/I/61jFTRm8QhL._AC_UF1000,1000_QL80_.jpg",
+      "price": 15.99
+    },
+    {
+      "id": "11",
+      "title": "Mastering MongoDB",
+      "description": "Dive deep into MongoDB for building high-performance apps.",
+      "author": "Karan Patel",
+      "year": 2021,
+      "genre": "Database",
+      "coverImage": "https://m.media-amazon.com/images/I/51ukFUttuxL.jpg",
+      "price": 21.49
+    },
+    {
+      "id": "12",
+      "title": "Creative Coding",
+      "description": "Explore coding as a tool for creativity and digital art.",
+      "author": "Isabella Cruz",
+      "year": 2017,
+      "genre": "Art & Technology",
+      "coverImage": "https://m.media-amazon.com/images/I/91cpJlNJxhL.jpg",
+      "price": 12.49
+    }
+  ]
+}
