@@ -1,0 +1,100 @@
+{
+  "cars": [
+    {
+      "id": "1",
+      "brand": "Toyota",
+      "model": "Corolla",
+      "year": 2020,
+      "type": "Sedan",
+      "pricePerDay": 45,
+      "availability": true,
+      "imageUrl": "https://scene7.toyota.eu/is/image/toyotaeurope/cors0005a_web_2023:Medium-Landscape?ts=1708962012070&resMode=sharp2&op_usm=1.75,0.3,2,0"
+    },
+    {
+      "id": "2",
+      "brand": "BMW",
+      "model": "X5",
+      "year": 2022,
+      "type": "SUV",
+      "pricePerDay": 95,
+      "availability": false,
+      "imageUrl": "https://hips.hearstapps.com/hmg-prod/images/p90495464-1677001974.jpg?crop=0.720xw:0.608xh;0.250xw,0.329xh&resize=1200:*"
+    },
+    {
+      "id": "3",
+      "brand": "Tesla",
+      "model": "Model 3",
+      "year": 2023,
+      "type": "Electric",
+      "pricePerDay": 120,
+      "availability": true,
+      "imageUrl": "https://media.ed.edmunds-media.com/tesla/model-3/2025/oem/2025_tesla_model-3_sedan_long-range_fq_oem_1_1280.jpg"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "fullName": "Alice Johnson",
+      "email": "alice@example.com",
+      "password": "password123",
+      "profileImage": "https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D",
+      "role": "client",
+      "phone": "+123456789",
+      "balance": 400,
+      "registeredAt": "2024-01-15"
+    },
+    {
+      "id": "2",
+      "fullName": "Bob Smith",
+      "email": "bob@example.com",
+      "profileImage": "https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D",
+      "password": "password123",
+      "role": "client",
+      "phone": "+987654321",
+      "balance": 100,
+      "registeredAt": "2024-03-10"
+    },
+    {
+      "id": "3",
+      "fullName": "Admin User",
+      "password": "password123",
+      "profileImage": "https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D",
+      "email": "admin@rentalcar.com",
+      "role": "admin",
+      "balance": 950,
+      "phone": "+111222333",
+      "registeredAt": "2023-12-01"
+    },
+    {
+      "id": "a6fa",
+      "fullName": "Elnur Khalilov",
+      "email": "elnur@gmail.com",
+      "password": "Elnur123!",
+      "profileImage": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+      "role": "client",
+      "phone": "+994554753075",
+      "balance": 200,
+      "registeredAt": "2025-06-05T13:09:59.526Z"
+    }
+  ],
+  "rentals": [
+    {
+      "id": "1",
+      "userId": "1",
+      "carId": "1",
+      "rentalDate": "2025-06-01",
+      "returnDate": "2025-06-05",
+      "status": "booked",
+      "totalPrice": 145
+    },
+    {
+      "id": "1",
+      "userId": "2",
+      "carId": "2",
+      "rentalDate": "2025-05-20",
+      "returnDate": "2025-05-23",
+      "status": "returned",
+      "totalPrice": 95
+    }
+  ]
+}
