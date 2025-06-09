@@ -18,6 +18,7 @@ import NotFound from "../pages/common/NotFound";
 import ProtectedRoute from "../components/common/ProtectedRoute";
 import AuthLayout from "../layout/AuthLayout";
 import Rent from "../pages/client/Rent";
+import AdminCars from "../pages/admin/AdminCars";
 
 const ROUTES = [
   {
@@ -31,11 +32,11 @@ const ROUTES = [
             index: true,
             element: <Dashboard />,
           },
+          {
+            path: "cars",
+            element: <AdminCars />,
+          },
         ],
-      },
-      {
-        path: "login",
-        element: <AdminLogin />,
       },
     ],
   },
@@ -75,7 +76,7 @@ const ROUTES = [
             element: <Favorites />,
           },
           {
-            path: "rent-a-car",
+            path: "rent-a-car/:id",
             element: <Rent />,
           },
         ],
@@ -92,6 +93,10 @@ const ROUTES = [
       {
         path: "login",
         element: <Login />,
+      },
+      {
+        path: "/admin/login",
+        element: <AdminLogin />,
       },
       {
         path: "register",

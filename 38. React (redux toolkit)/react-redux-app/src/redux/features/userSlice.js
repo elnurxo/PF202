@@ -4,7 +4,7 @@ import { endpoints } from "../../constants";
 
 const userId = localStorage.getItem("userId");
 const initialState = { user: null };
-if (userId) {
+if (JSON.parse(userId)) {
   const user = await controller.getOne(endpoints.users, JSON.parse(userId));
   if (user?.id) {
     delete user.password;
@@ -21,11 +21,17 @@ const userSlice = createSlice({
     login(state, action) {
       state.user = { ...action.payload };
     },
+    updateBalance(state, action) {
+      state.user = { ...state.user, balance: action.payload };
+    },
+    updateProfile(state, action) {
+      state.user = { ...state.user, ...action.payload };
+    },
     logout(state) {
       state.user = null;
     },
   },
 });
 
-export const { login, logout } = userSlice.actions;
+export const { login, logout, updateBalance, updateProfile } = userSlice.actions;
 export default userSlice.reducer;

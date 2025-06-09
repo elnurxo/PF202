@@ -3,6 +3,7 @@ import { Navigate, Outlet } from "react-router";
 
 const ProtectedRoute = ({ role }) => {
   const user = useSelector((state) => state.user.user);
+  const admin = useSelector((state) => state.admin.admin);
   if (role === "client") {
     return (
       <>
@@ -16,7 +17,7 @@ const ProtectedRoute = ({ role }) => {
   } else if (role === "admin") {
     return (
       <>
-        {user && user.role === "admin" ? (
+        {admin && admin.role === "admin" ? (
           <Outlet />
         ) : (
           <Navigate to={"/admin/login"} replace={true} />

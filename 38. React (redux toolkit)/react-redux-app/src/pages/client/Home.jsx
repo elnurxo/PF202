@@ -20,25 +20,25 @@ const Home = () => {
         </div>
       </section>
 
-      <section class="bg-white py-16">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-          <h3 class="text-2xl font-bold mb-8">Why Choose RentRide?</h3>
-          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="p-6 bg-gray-100 rounded-xl">
-              <h4 class="font-semibold text-lg mb-2">Affordable Prices</h4>
-              <p class="text-sm text-gray-600">
+      <section className="bg-white py-16">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h3 className="text-2xl font-bold mb-8">Why Choose RentRide?</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="p-6 bg-gray-100 rounded-xl">
+              <h4 className="font-semibold text-lg mb-2">Affordable Prices</h4>
+              <p className="text-sm text-gray-600">
                 Get the best deals on a wide range of cars.
               </p>
             </div>
-            <div class="p-6 bg-gray-100 rounded-xl">
-              <h4 class="font-semibold text-lg mb-2">24/7 Support</h4>
-              <p class="text-sm text-gray-600">
+            <div className="p-6 bg-gray-100 rounded-xl">
+              <h4 className="font-semibold text-lg mb-2">24/7 Support</h4>
+              <p className="text-sm text-gray-600">
                 We’re here whenever you need us.
               </p>
             </div>
-            <div class="p-6 bg-gray-100 rounded-xl">
-              <h4 class="font-semibold text-lg mb-2">Easy Booking</h4>
-              <p class="text-sm text-gray-600">
+            <div className="p-6 bg-gray-100 rounded-xl">
+              <h4 className="font-semibold text-lg mb-2">Easy Booking</h4>
+              <p className="text-sm text-gray-600">
                 Book a car in just a few clicks.
               </p>
             </div>

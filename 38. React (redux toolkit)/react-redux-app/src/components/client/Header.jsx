@@ -5,9 +5,7 @@ import {
   DropdownHeader,
   DropdownItem,
   Navbar,
-  NavbarBrand,
   NavbarCollapse,
-  NavbarLink,
   NavbarToggle,
 } from "flowbite-react";
 import { Link, NavLink } from "react-router";
@@ -38,11 +36,9 @@ const Header = () => {
   return (
     <>
       <Navbar className="shadow py-4" fluid rounded>
-        <NavbarBrand>
-          <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-            <Link to={"/"}>Car Rental</Link>
-          </span>
-        </NavbarBrand>
+        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+          <Link to={"/"}>Car Rental</Link>
+        </span>
         {user ? (
           <>
             <div className="flex md:order-2">
@@ -102,7 +98,7 @@ const Header = () => {
           {links &&
             links.map((link, idx) => {
               return (
-                <NavbarLink className="cursor-pointer" key={idx}>
+                <div className="cursor-pointer" key={idx}>
                   <NavLink
                     className={({ isActive }) =>
                       isActive ? "text-blue-700" : "text-gray-600"
@@ -111,7 +107,7 @@ const Header = () => {
                   >
                     {link.title}
                   </NavLink>
-                </NavbarLink>
+                </div>
               );
             })}
         </NavbarCollapse>

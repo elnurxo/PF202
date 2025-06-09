@@ -40,7 +40,7 @@
       "profileImage": "https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D",
       "role": "client",
       "phone": "+123456789",
-      "balance": 400,
+      "balance": 20,
       "registeredAt": "2024-01-15"
     },
     {
@@ -56,7 +56,7 @@
     },
     {
       "id": "3",
-      "fullName": "Admin User",
+      "fullName": "Elnur Khalilov",
       "password": "password123",
       "profileImage": "https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D",
       "email": "admin@rentalcar.com",
@@ -70,31 +70,61 @@
       "fullName": "Elnur Khalilov",
       "email": "elnur@gmail.com",
       "password": "Elnur123!",
-      "profileImage": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+      "profileImage": "https://static01.nyt.com/images/2013/06/16/arts/16MONSTER_SPAN/16MONSTER_SPAN-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
       "role": "client",
       "phone": "+994554753075",
-      "balance": 200,
+      "balance": 740,
       "registeredAt": "2025-06-05T13:09:59.526Z"
     }
   ],
   "rentals": [
     {
-      "id": "1",
-      "userId": "1",
-      "carId": "1",
-      "rentalDate": "2025-06-01",
-      "returnDate": "2025-06-05",
+      "id": "69ed",
+      "userId": "a6fa",
+      "carId": "2",
+      "carName": "BMW X5",
+      "rentalDate": "2025-06-10",
+      "returnDate": "2025-06-12",
+      "date": "2025-06-09T13:15:31.271Z",
       "status": "booked",
-      "totalPrice": 145
+      "totalPrice": 190,
+      "days": 2
     },
     {
-      "id": "1",
-      "userId": "2",
-      "carId": "2",
-      "rentalDate": "2025-05-20",
-      "returnDate": "2025-05-23",
-      "status": "returned",
-      "totalPrice": 95
+      "id": "391e",
+      "userId": "a6fa",
+      "carId": "1",
+      "carName": "Toyota Corolla",
+      "rentalDate": "2025-06-27",
+      "returnDate": "2025-07-01",
+      "date": "2025-06-09T13:38:13.870Z",
+      "status": "booked",
+      "totalPrice": 180,
+      "days": 4
+    },
+    {
+      "id": "03b9",
+      "userId": "a6fa",
+      "carId": "3",
+      "carName": "Tesla Model 3",
+      "rentalDate": "2025-08-19",
+      "returnDate": "2025-08-22",
+      "date": "2025-06-09T13:38:33.950Z",
+      "status": "booked",
+      "totalPrice": 360,
+      "days": 3
+    },
+    {
+      "id": "de02",
+      "userId": "a6fa",
+      "carId": "3",
+      "carName": "Tesla Model 3",
+      "rentalDate": "2025-07-15",
+      "returnDate": "2025-07-17",
+      "date": "2025-06-09T13:46:33.980Z",
+      "status": "booked",
+      "totalPrice": 240,
+      "days": 2
     }
   ]
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import controller from "../../services/requests/request";
 import { endpoints } from "../../constants";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { useSelector } from "react-redux";
 import { enqueueSnackbar } from "notistack";
 
@@ -10,11 +10,11 @@ const Cars = () => {
   const [filter, setFilter] = useState("All");
   const [cars, setCars] = useState([]);
   const user = useSelector((state) => state.user.user);
+  const navigate = useNavigate();
 
   useEffect(() => {
     controller.getAll(endpoints.cars).then((data) => {
       setCars([...data]);
-      console.log("data: ", data);
     });
   }, []);
 
@@ -81,14 +81,7 @@ const Cars = () => {
                     <button
                       onClick={() => {
                         if (user && user.role === "client") {
-                          enqueueSnackbar("mock rent success", {
-                            variant: "success",
-                            autoHideDuration: 2000,
-                            anchorOrigin: {
-                              vertical: "bottom",
-                              horizontal: "right",
-                            },
-                          });
+                          navigate(`/rent-a-car/${car.id}`);
                         } else {
                           enqueueSnackbar("you should be logged in to rent", {
                             variant: "error",
