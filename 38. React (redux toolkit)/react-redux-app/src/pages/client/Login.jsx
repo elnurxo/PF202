@@ -26,20 +26,43 @@ const Login = () => {
           u.role === "client"
       );
       if (validUser) {
-        actions.resetForm();
-        enqueueSnackbar("user sign in successfully", {
-          variant: "success",
-          autoHideDuration: 2000,
-          anchorOrigin: {
-            vertical: "bottom",
-            horizontal: "right",
-          },
-        });
-        const user = { ...validUser };
-        delete user.password;
-        localStorage.setItem("userId", JSON.stringify(user.id));
-        dispatch(login(user));
-        navigate("/cars");
+        if (
+          validUser.isBanned &&
+          new Date().getTime() < new Date(validUser.banUntil).getTime()
+        ) {
+          const now = new Date();
+          const banUntil = new Date(validUser.banUntil);
+          const timeDifferenceMs = banUntil.getTime() - now.getTime();
+          const remainedMinutes = Math.floor(timeDifferenceMs / 1000 / 60);
+          enqueueSnackbar(
+            `your account has been banned by admin, come back after ${
+              remainedMinutes - 240
+            }`,
+            {
+              variant: "warning",
+              autoHideDuration: 2000,
+              anchorOrigin: {
+                vertical: "bottom",
+                horizontal: "right",
+              },
+            }
+          );
+        } else {
+          actions.resetForm();
+          enqueueSnackbar("user sign in successfully", {
+            variant: "success",
+            autoHideDuration: 2000,
+            anchorOrigin: {
+              vertical: "bottom",
+              horizontal: "right",
+            },
+          });
+          const user = { ...validUser };
+          delete user.password;
+          localStorage.setItem("userId", JSON.stringify(user.id));
+          dispatch(login(user));
+          navigate("/cars");
+        }
       } else {
         enqueueSnackbar("invalid credentials", {
           variant: "error",

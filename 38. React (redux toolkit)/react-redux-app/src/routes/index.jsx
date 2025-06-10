@@ -11,6 +11,8 @@ import Register from "../pages/client/Register";
 //admin pages
 import Dashboard from "../pages/admin/Dashboard";
 import AdminLogin from "../pages/admin/AdminLogin";
+import AdminUser from "../pages/admin/AdminUser";
+import AdminCars from "../pages/admin/AdminCars";
 //layouts
 import ClientLayout from "../layout/ClientLayout";
 import AdminLayout from "../layout/AdminLayout";
@@ -18,7 +20,6 @@ import NotFound from "../pages/common/NotFound";
 import ProtectedRoute from "../components/common/ProtectedRoute";
 import AuthLayout from "../layout/AuthLayout";
 import Rent from "../pages/client/Rent";
-import AdminCars from "../pages/admin/AdminCars";
 
 const ROUTES = [
   {
@@ -35,6 +36,10 @@ const ROUTES = [
           {
             path: "cars",
             element: <AdminCars />,
+          },
+            {
+            path: "users",
+            element: <AdminUser />,
           },
         ],
       },
