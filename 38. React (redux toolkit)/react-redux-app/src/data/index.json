@@ -17,7 +17,7 @@
       "year": 2022,
       "type": "suv",
       "pricePerDay": 95,
-      "availability": false,
+      "availability": true,
       "imageUrl": "https://hips.hearstapps.com/hmg-prod/images/p90495464-1677001974.jpg?crop=0.720xw:0.608xh;0.250xw,0.329xh&resize=1200:*"
     },
     {
@@ -69,6 +69,26 @@
       "pricePerDay": 55,
       "availability": true,
       "imageUrl": "https://media.ed.edmunds-media.com/bmw/5-series/2016/oem/2016_bmw_5-series_sedan_535d_fq_oem_1_1600.jpg"
+    },
+    {
+      "id": "0af1",
+      "brand": "Opel",
+      "model": "Astra",
+      "year": 2006,
+      "type": "hatchback",
+      "pricePerDay": 30,
+      "availability": true,
+      "imageUrl": "https://s.auto.drom.ru/i24198/c/photos/fullsize/opel/astra/opel_astra_536792.jpg"
+    },
+    {
+      "id": "7e34",
+      "brand": "Porsche",
+      "model": "911 gt3 rs",
+      "year": 2021,
+      "type": "sports-car",
+      "pricePerDay": 170,
+      "availability": true,
+      "imageUrl": "https://hips.hearstapps.com/hmg-prod/images/2019-porsche-911-gt3-rs-placement-1524749910.jpg?crop=0.8148148148148148xw:1xh;center,top&resize=1200:*"
     }
   ],
   "users": [
@@ -80,8 +100,9 @@
       "profileImage": "https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D",
       "role": "client",
       "phone": "+123456789",
-      "isBanned": false,
-      "banUntil": null,
+      "isBanned": true,
+      "favorites": [],
+      "banUntil": "2025-06-11T17:04:13.711Z",
       "balance": 20,
       "registeredAt": "2024-01-15"
     },
@@ -92,10 +113,14 @@
       "password": "Elnur123!",
       "profileImage": "https://static01.nyt.com/images/2013/06/16/arts/16MONSTER_SPAN/16MONSTER_SPAN-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
       "role": "client",
-      "isBanned": true,
-      "banUntil": "2025-06-10T17:56:28.784Z",
+      "isBanned": false,
+      "favorites": [
+        "2",
+        "7e34"
+      ],
+      "banUntil": null,
       "phone": "+994554753075",
-      "balance": 740,
+      "balance": 260,
       "registeredAt": "2025-06-05T13:09:59.526Z"
     },
     {
@@ -105,6 +130,7 @@
       "profileImage": "https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D",
       "email": "elmir@gmail.com",
       "isBanned": false,
+      "favorites": [],
       "banUntil": null,
       "role": "admin",
       "balance": 950,
@@ -114,52 +140,28 @@
   ],
   "rentals": [
     {
-      "id": "69ed",
+      "id": "0860",
       "userId": "a6fa",
       "carId": "2",
       "carName": "BMW X5",
-      "rentalDate": "2025-06-10",
-      "returnDate": "2025-06-12",
-      "date": "2025-06-09T13:15:31.271Z",
+      "rentalDate": "2025-06-25",
+      "returnDate": "2025-06-27",
+      "date": "2025-06-11T11:06:14.203Z",
       "status": "booked",
       "totalPrice": 190,
       "days": 2
     },
     {
-      "id": "391e",
+      "id": "b3b6",
       "userId": "a6fa",
-      "carId": "1",
-      "carName": "Toyota Corolla",
-      "rentalDate": "2025-06-27",
-      "returnDate": "2025-07-01",
-      "date": "2025-06-09T13:38:13.870Z",
+      "carId": "da52",
+      "carName": "Honda CR-V",
+      "rentalDate": "2025-07-07",
+      "returnDate": "2025-07-10",
+      "date": "2025-06-11T11:06:39.808Z",
       "status": "booked",
       "totalPrice": 180,
-      "days": 4
-    },
-    {
-      "id": "03b9",
-      "userId": "a6fa",
-      "carId": "3",
-      "carName": "Tesla Model 3",
-      "rentalDate": "2025-08-19",
-      "returnDate": "2025-08-22",
-      "date": "2025-06-09T13:38:33.950Z",
-      "status": "booked",
-      "totalPrice": 360,
       "days": 3
-    },
-    {
-      "id": "de02",
-      "userId": "a6fa",
-      "carId": "3",
-      "carName": "Tesla Model 3",
-      "rentalDate": "2025-07-15",
-      "returnDate": "2025-07-17",
-      "date": "2025-06-09T13:46:33.980Z",
-      "status": "booked",
-      "totalPrice": 240,
-      "days": 2
     }
   ]
 }

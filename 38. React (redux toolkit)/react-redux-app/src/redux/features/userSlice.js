@@ -6,6 +6,12 @@ const userId = localStorage.getItem("userId");
 const initialState = { user: null };
 if (JSON.parse(userId)) {
   const user = await controller.getOne(endpoints.users, JSON.parse(userId));
+  if (user.isBanned) {
+    localStorage.setItem("userId", JSON.stringify(null));
+    initialState.user = { user: null };
+    alert("your account has been banned!");
+    window.location.reload();
+  }
   if (user?.id) {
     delete user.password;
     initialState.user = { ...user };
@@ -33,5 +39,6 @@ const userSlice = createSlice({
   },
 });
 
-export const { login, logout, updateBalance, updateProfile } = userSlice.actions;
+export const { login, logout, updateBalance, updateProfile } =
+  userSlice.actions;
 export default userSlice.reducer;

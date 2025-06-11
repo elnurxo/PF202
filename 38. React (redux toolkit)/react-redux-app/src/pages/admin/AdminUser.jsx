@@ -177,6 +177,11 @@ const AdminUser = () => {
         style={{ padding: "6px 20px" }}
         dataSource={users}
         columns={columns}
+        pagination={{
+          defaultPageSize: 5,
+          showSizeChanger: true,
+          pageSizeOptions: ["3", "5", "10"],
+        }}
       />
 
       <Modal

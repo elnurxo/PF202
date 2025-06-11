@@ -252,7 +252,7 @@ const AdminCars = () => {
   return (
     <>
       <div className="flex items-center justify-center gap-x-8 pt-8 mb-3.5">
-        <h1 className="text-center text-2xl text-blue-800">Admin Cars</h1>
+        <h1 className="text-center text-2xl text-blue-800">Cars</h1>
         <Button onClick={showAddModal} variant="dashed" color="orange">
           Add Car
         </Button>

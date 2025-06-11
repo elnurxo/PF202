@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import controller from "../../services/requests/request";
 import { endpoints } from "../../constants";
 import { Link, useNavigate } from "react-router";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { enqueueSnackbar } from "notistack";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
+import { updateProfile } from "../../redux/features/userSlice";
 
 const Cars = () => {
   const [search, setSearch] = useState("");
@@ -11,20 +13,43 @@ const Cars = () => {
   const [cars, setCars] = useState([]);
   const user = useSelector((state) => state.user.user);
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   useEffect(() => {
     controller.getAll(endpoints.cars).then((data) => {
       setCars([...data]);
     });
   }, []);
 
-  const filteredCars = cars.filter((car) => {
-    const matchesSearch =
-      car.brand.toLowerCase().includes(search.toLowerCase()) ||
-      car.model.toLowerCase().includes(search.toLowerCase());
-    const matchesFilter = filter === "All" || car.type === filter;
-    return matchesSearch && matchesFilter;
-  });
+  const [sort, setSort] = useState("");
+  const filteredCars = cars
+    .filter((car) => {
+      const matchesSearch =
+        car.brand.toLowerCase().includes(search.toLowerCase()) ||
+        car.model.toLowerCase().includes(search.toLowerCase());
+      const matchesFilter = filter === "All" || car.type === filter;
+      return matchesSearch && matchesFilter;
+    })
+    .sort((a, b) => {
+      if (sort === "asc") {
+        return a.pricePerDay - b.pricePerDay;
+      } else if (sort === "desc") {
+        return b.pricePerDay - a.pricePerDay;
+      }
+    });
+
+  const types = [
+    "coupe",
+    "crossover",
+    "electric",
+    "hatchback",
+    "hybrid",
+    "minivan",
+    "pickup-truck",
+    "sedan",
+    "sports-car",
+    "station-wagon",
+    "suv",
+  ];
 
   return (
     <>
@@ -44,14 +69,41 @@ const Cars = () => {
               onChange={(e) => setSearch(e.target.value)}
             />
             <select
+              onChange={(e) => {
+                switch (e.target.value) {
+                  case "asc":
+                    setSort("asc");
+                    break;
+                  case "desc":
+                    setSort("desc");
+                    break;
+                  default:
+                    setSort("");
+                    break;
+                }
+              }}
+              className="w-full sm:w-1/3 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option disabled defaultValue={""}>
+                sort cars by price
+              </option>
+              <option value="desc">price high-to-low</option>
+              <option value="asc">price low-to-high</option>
+            </select>
+            <select
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
               className="w-full sm:w-1/3 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="All">All Types</option>
-              <option value="Sedan">Sedan</option>
-              <option value="SUV">SUV</option>
-              <option value="Electric">Electric</option>
+              {types &&
+                types.map((type, idx) => {
+                  return (
+                    <option key={idx} value={type}>
+                      {type}
+                    </option>
+                  );
+                })}
             </select>
           </div>
 
@@ -78,25 +130,97 @@ const Cars = () => {
                     <p className="text-sm text-gray-600">
                       {car.type} – From ${car.pricePerDay}/day
                     </p>
-                    <button
-                      onClick={() => {
-                        if (user && user.role === "client") {
-                          navigate(`/rent-a-car/${car.id}`);
-                        } else {
-                          enqueueSnackbar("you should be logged in to rent", {
-                            variant: "error",
-                            autoHideDuration: 2000,
-                            anchorOrigin: {
-                              vertical: "bottom",
-                              horizontal: "right",
-                            },
-                          });
-                        }
-                      }}
-                      className="cursor-pointer mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-                    >
-                      Rent Now
-                    </button>
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={() => {
+                          if (user && user.role === "client") {
+                            navigate(`/rent-a-car/${car.id}`);
+                          } else {
+                            enqueueSnackbar("you should be logged in to rent", {
+                              variant: "error",
+                              autoHideDuration: 2000,
+                              anchorOrigin: {
+                                vertical: "bottom",
+                                horizontal: "right",
+                              },
+                            });
+                          }
+                        }}
+                        className="cursor-pointer mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+                      >
+                        Rent Now
+                      </button>
+                      {user && (
+                        <button
+                          onClick={async () => {
+                            if (user.favorites.find((fav) => fav == car.id)) {
+                              await controller.update(
+                                endpoints.users,
+                                user.id,
+                                {
+                                  favorites: [
+                                    ...user.favorites.filter(
+                                      (f) => f != car.id
+                                    ),
+                                  ],
+                                }
+                              );
+                              enqueueSnackbar(
+                                `${car.brand} ${car.model} removed to favorites`,
+                                {
+                                  autoHideDuration: 2000,
+                                  anchorOrigin: {
+                                    vertical: "bottom",
+                                    horizontal: "right",
+                                  },
+                                  variant: "success",
+                                }
+                              );
+                              dispatch(
+                                updateProfile({
+                                  favorites: [
+                                    ...user.favorites.filter(
+                                      (f) => f != car.id
+                                    ),
+                                  ],
+                                })
+                              );
+                            } else {
+                              await controller.update(
+                                endpoints.users,
+                                user.id,
+                                {
+                                  favorites: [...user.favorites, car.id],
+                                }
+                              );
+                              enqueueSnackbar(
+                                `${car.brand} ${car.model} added to favorites`,
+                                {
+                                  autoHideDuration: 2000,
+                                  anchorOrigin: {
+                                    vertical: "bottom",
+                                    horizontal: "right",
+                                  },
+                                  variant: "success",
+                                }
+                              );
+                              dispatch(
+                                updateProfile({
+                                  favorites: [...user.favorites, car.id],
+                                })
+                              );
+                            }
+                          }}
+                          className="cursor-pointer mt-4 bg-red-800 text-white px-4 py-3 rounded hover:bg-red-700"
+                        >
+                          {user.favorites.find((fav) => fav == car.id) ? (
+                            <FaHeart />
+                          ) : (
+                            <FaRegHeart />
+                          )}
+                        </button>
+                      )}
+                    </div>
                   </div>
                 </div>
               ))

@@ -41,6 +41,9 @@ const Register = () => {
             "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
           role: "client",
           phone: values.phone,
+          isBanned: false,
+          banUntil: null,
+          favorites: [],
           balance: values.balance,
           registeredAt: new Date(),
         });

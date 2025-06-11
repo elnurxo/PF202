@@ -17,7 +17,6 @@ const Login = () => {
     },
     validationSchema: loginValidationSchema,
     onSubmit: async (values, actions) => {
-      console.log("values: ", values);
       const users = await controller.getAll(endpoints.users);
       const validUser = users.find(
         (u) =>
@@ -26,27 +25,45 @@ const Login = () => {
           u.role === "client"
       );
       if (validUser) {
-        if (
-          validUser.isBanned &&
-          new Date().getTime() < new Date(validUser.banUntil).getTime()
-        ) {
+        if (validUser.isBanned) {
           const now = new Date();
           const banUntil = new Date(validUser.banUntil);
           const timeDifferenceMs = banUntil.getTime() - now.getTime();
-          const remainedMinutes = Math.floor(timeDifferenceMs / 1000 / 60);
-          enqueueSnackbar(
-            `your account has been banned by admin, come back after ${
-              remainedMinutes - 240
-            }`,
-            {
-              variant: "warning",
+          const remainedMinutes =
+            Math.floor(timeDifferenceMs / 1000 / 60) - 240;
+
+          if (remainedMinutes > 0) {
+            enqueueSnackbar(
+              `your account has been banned, come back after ${remainedMinutes} minutes`,
+              {
+                variant: "warning",
+                autoHideDuration: 2000,
+                anchorOrigin: {
+                  vertical: "bottom",
+                  horizontal: "right",
+                },
+              }
+            );
+          } else {
+            actions.resetForm();
+            await controller.update(endpoints.users, validUser.id, {
+              isBanned: false,
+              banUntil: null,
+            });
+            enqueueSnackbar("user sign in successfully", {
+              variant: "success",
               autoHideDuration: 2000,
               anchorOrigin: {
                 vertical: "bottom",
                 horizontal: "right",
               },
-            }
-          );
+            });
+            const user = { ...validUser };
+            delete user.password;
+            localStorage.setItem("userId", JSON.stringify(user.id));
+            dispatch(login(user));
+            navigate("/cars");
+          }
         } else {
           actions.resetForm();
           enqueueSnackbar("user sign in successfully", {

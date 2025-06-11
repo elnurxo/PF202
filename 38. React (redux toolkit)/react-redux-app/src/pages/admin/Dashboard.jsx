@@ -14,6 +14,7 @@ import {
   YAxis,
   CartesianGrid,
 } from "recharts";
+import moment from "moment";
 
 const Dashboard = () => {
   const [cars, setCars] = useState([]);
@@ -64,6 +65,31 @@ const Dashboard = () => {
     };
   });
 
+  //recent rentals & popular cars
+  const recentRentals = rentals
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3)
+    .map((rental) => {
+      const user = users.find((u) => u.id === rental.userId);
+      return {
+        userName: user?.fullName || "Unknown User",
+        carName: rental.carName,
+        timeAgo: moment(rental.date).fromNow(),
+      };
+    });
+  const carRentalCounts = rentals.reduce((acc, rental) => {
+    acc[rental.carName] = (acc[rental.carName] || 0) + 1;
+    return acc;
+  }, {});
+
+  const popularCars = Object.entries(carRentalCounts)
+    .sort(([, a], [, b]) => b - a)
+    .slice(0, 3)
+    .map(([carName, count]) => ({
+      name: carName,
+      count,
+      emoji: "🚗",
+    }));
   return (
     <main className="px-6 pt-8 w-full">
       {/* Header */}
@@ -97,9 +123,15 @@ const Dashboard = () => {
         <div className="bg-white shadow-md rounded-2xl p-6 border border-gray-200">
           <h3 className="text-lg font-semibold mb-4">Recent Rentals</h3>
           <ul className="space-y-2 text-sm text-gray-700">
-            <li>John Doe rented Tesla Model 3 - 2 hrs ago</li>
-            <li>Mary Jane rented BMW X5 - 5 hrs ago</li>
-            <li>Ali Ahmed rented Toyota Corolla - 8 hrs ago</li>
+            {recentRentals.length > 0 ? (
+              recentRentals.map((rental, index) => (
+                <li key={index}>
+                  {rental.userName} rented {rental.carName} - {rental.timeAgo}
+                </li>
+              ))
+            ) : (
+              <li className="text-gray-500 italic">No recent rentals</li>
+            )}
           </ul>
         </div>
 
@@ -107,9 +139,16 @@ const Dashboard = () => {
         <div className="bg-white shadow-md rounded-2xl p-6 border border-gray-200">
           <h3 className="text-lg font-semibold mb-4">Popular Cars</h3>
           <ul className="space-y-2 text-sm text-gray-700">
-            <li>🚗 Tesla Model 3 (125 rentals)</li>
-            <li>🚙 BMW X5 (98 rentals)</li>
-            <li>🚕 Toyota Corolla (87 rentals)</li>
+            {popularCars.length > 0 ? (
+              popularCars.map((car, index) => (
+                <li key={index}>
+                  {car.emoji} {car.name} ({car.count} rental
+                  {car.count !== 1 ? "s" : ""})
+                </li>
+              ))
+            ) : (
+              <li className="text-gray-500 italic">No rental data available</li>
+            )}
           </ul>
         </div>
       </section>

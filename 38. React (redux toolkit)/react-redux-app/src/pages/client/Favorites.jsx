@@ -1,25 +1,27 @@
-
-const carData = [
-  {
-    id: 1,
-    name: "Toyota Corolla",
-    type: "Sedan",
-    price: 40,
-    image:
-      "https://scene7.toyota.eu/is/image/toyotaeurope/cors0005a_web_2023:Medium-Landscape?ts=1708962012070&resMode=sharp2&op_usm=1.75,0.3,2,0",
-  },
-  {
-    id: 2,
-    name: "Tesla Model 3",
-    type: "Electric",
-    price: 75,
-    image:
-      "https://scene7.toyota.eu/is/image/toyotaeurope/cors0005a_web_2023:Medium-Landscape?ts=1708962012070&resMode=sharp2&op_usm=1.75,0.3,2,0",
-  },
-];
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import controller from "../../services/requests/request";
+import { endpoints } from "../../constants";
+import { updateProfile } from "../../redux/features/userSlice";
+import { enqueueSnackbar } from "notistack";
+import { Link } from "react-router-dom";
 
 const Favorites = () => {
-  const cars = [...carData];
+  const user = useSelector((state) => state.user.user);
+  const dispatch = useDispatch();
+  const [favoriteCars, setFavoriteCars] = useState([]);
+  useEffect(() => {
+    controller.getAll(endpoints.cars).then((cars) => {
+      setFavoriteCars([
+        ...user.favorites.map((fav) => {
+          const car = cars.find((c) => c.id === fav);
+          if (car) {
+            return car;
+          }
+        }),
+      ]);
+    });
+  }, [user.favorites]);
   return (
     <section className="py-16">
       <div className="max-w-7xl mx-auto px-4">
@@ -29,24 +31,55 @@ const Favorites = () => {
 
         {/* Car Cards */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {cars.length ? (
-            cars.map((car) => (
+          {favoriteCars.length ? (
+            favoriteCars.map((car) => (
               <div
                 key={car.id}
                 className="bg-white rounded-xl shadow-md overflow-hidden"
               >
                 <img
-                  src={car.image}
-                  alt={car.name}
+                  src={car.imageUrl}
+                  alt={car.brand}
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-4">
-                  <h4 className="font-semibold text-lg">{car.name}</h4>
+                  <h4 className="font-semibold text-lg underline">
+                    <Link to={`/cars/${car.id}`}>
+                      {car.brand} {car.model}
+                    </Link>
+                  </h4>
                   <p className="text-sm text-gray-600">
-                    {car.type} – From ${car.price}/day
+                    {car.type} – From ${car.pricePerDay}/day
                   </p>
-                  <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                    Rent Now
+                  <button
+                    onClick={() => {
+                      controller.update(endpoints.users, user.id, {
+                        favorites: [
+                          ...user.favorites.filter((f) => f != car.id),
+                        ],
+                      });
+                      dispatch(
+                        updateProfile({
+                          favorites: [
+                            ...user.favorites.filter((f) => f != car.id),
+                          ],
+                        })
+                      );
+                      enqueueSnackbar(
+                        `${car.brand} ${car.model} removed from favorites`,
+                        {
+                          autoHideDuration: 2000,
+                          anchorOrigin: {
+                            vertical: "bottom",
+                            horizontal: "right",
+                          },
+                          variant: "success",
+                        }
+                      );
+                    }}
+                    className="cursor-pointer mt-4 bg-red-800 text-white px-4 py-2 rounded hover:bg-red-700"
+                  >
+                    remove from favorites
                   </button>
                 </div>
               </div>

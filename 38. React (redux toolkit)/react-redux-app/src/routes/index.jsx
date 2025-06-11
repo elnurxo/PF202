@@ -13,6 +13,8 @@ import Dashboard from "../pages/admin/Dashboard";
 import AdminLogin from "../pages/admin/AdminLogin";
 import AdminUser from "../pages/admin/AdminUser";
 import AdminCars from "../pages/admin/AdminCars";
+import AdminRentals from "../pages/admin/AdminRentals";
+import AdminProfile from "../pages/admin/AdminProfile";
 //layouts
 import ClientLayout from "../layout/ClientLayout";
 import AdminLayout from "../layout/AdminLayout";
@@ -37,9 +39,17 @@ const ROUTES = [
             path: "cars",
             element: <AdminCars />,
           },
-            {
+          {
             path: "users",
             element: <AdminUser />,
+          },
+          {
+            path: "rentals",
+            element: <AdminRentals />,
+          },
+           {
+            path: "profile",
+            element: <AdminProfile />,
           },
         ],
       },
