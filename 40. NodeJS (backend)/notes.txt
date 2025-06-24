@@ -1,7 +1,11 @@
 Node JS +
 modules & globals +
-what is backend
-Express JS, app setup, code sample
-Express JS (simple data get all, by id, query-params [pagination, search])
-Server config (search/sort/pagination)
-nodemon +, express, dotenv
+what is backend +
+Express JS, app setup, code sample +
+Express JS (simple data get all, by id, query-params [pagination, search]) +
+Server config (search/sort/pagination) +
+nodemon +, express, dotenv, gitignore +
+middlewares +
+server security 
+server deployment
+pattern designs, folder structure
