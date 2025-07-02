@@ -1,0 +1,27 @@
+// E-Commerce server (bazaar)
+
+models: products, categories, users, sliders, reviews, orders, messages (contact form)
+
+//PRODUCTS CRUD
+// product schema - id, name, costPrice, salePrice, discountPercentage, description,
+isNew, isFeatured, stockQuantity, soldQuantity, rating 
++ (category, reviewCount, image, public_id, vendor, tags)
++ virtual reviews 
+
+//categories - name, description, (virtual - products)
+
+
+//optimizations - phone for users, price snapshot in basket,
+emailVerificationToken & emailVerificationExpires
+//stock check in order service
+//for orders - paymentIntentId, // from Stripe, deliveryTrackingCode, deliveryDateEstimate
+
+
+//INDEXING FOR SCHEMAS
+UserSchema.index({ email: 1 });
+ProductSchema.index({ name: "text", tags: 1 });
+OrderSchema.index({ user: 1 });
+ReviewSchema.index({ product: 1, user: 1 }, { unique: true }); // prevent multiple reviews by same user
+
+
+//nice to have - coupons, search history, product view count, multiple address per user, variant system (color, size), refunds, delivery estimate

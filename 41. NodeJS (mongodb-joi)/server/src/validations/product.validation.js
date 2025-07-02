@@ -1,0 +1,24 @@
+const Joi = require("joi");
+
+const productValidationSchema = Joi.object({
+  title: Joi.string().min(2).max(100).required(),
+  costPrice: Joi.number().min(0).required(),
+  salePrice: Joi.number()
+    .positive()
+    .min(Joi.ref("costPrice"))
+    .required()
+    .messages({
+      "number.min": '"salePrice" must be greater than or equal to "costPrice"',
+    }),
+  discountPercentage: Joi.number()
+    .positive()
+    .min(0)
+    .max(100)
+    .required()
+    .default(0),
+  description: Joi.string().min(10).max(200).required(),
+  isFeatured: Joi.boolean().default(false),
+  stockQuantity: Joi.number().min(0).positive().integer().required().default(0),
+});
+
+module.exports = productValidationSchema;
