@@ -8,6 +8,8 @@ require("dotenv").config();
 const productRouter = require("./src/routes/productRoute");
 const categoryRouter = require("./src/routes/categoryRoute");
 const sliderRouter = require("./src/routes/sliderRoute");
+const messageRouter = require("./src/routes/messageRoute");
+const userRouter = require("./src/routes/userRoute");
 
 //global middlewares
 app.use(express.json());
@@ -33,6 +35,8 @@ app.use(limiter);
 app.use("/products", productRouter);
 app.use("/categories", categoryRouter);
 app.use("/sliders", sliderRouter);
+app.use("/messages", messageRouter);
+app.use("/auth", userRouter);
 
 //global error handler
 app.use(errorHandler);
